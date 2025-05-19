@@ -1,0 +1,23 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+import ProductGrid from "../components/ProductGrid.astro";
+---
+
+<MainLayout>
+  <section>
+    <h1>Products</h1>
+    <ProductGrid />
+  </section>
+</MainLayout>
+
+<style>
+  section {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 2rem;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+</style>
