@@ -1,23 +1,32 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
 import ProductGrid from "../components/ProductGrid.astro";
+const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bagerdygtigsprodukter", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpicmpheWVrd3F3a3l3bHBiYmFzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNDk4MDcsImV4cCI6MjA2MjcyNTgwN30.tQZl_c2h8IkBAMemoVQM0NdeNeGIdpMpRpBVKU3DWvU",
+  },
+}).then((res) => res.json());
+console.log(data);
 ---
 
 <MainLayout>
-  <section>
-    <h1>Products</h1>
-    <ProductGrid />
+  <h1>SHOP BAGVÆRK</h1>
+  <section class="grid_1-1-1">
+    {
+      data.map((products) => {
+        return <ProductGrid data={products} />;
+      })
+    }
   </section>
 </MainLayout>
 
 <style>
-  section {
-    display: grid;
-    gap: 1.5rem;
-    padding-block: 2rem;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
+  @media (min-width: 800px) {
+    .grid_1-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
   }
 </style>

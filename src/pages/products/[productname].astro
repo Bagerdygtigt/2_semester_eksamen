@@ -1,0 +1,43 @@
+---
+import MainLayout from "../../layout/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bagerdygtigsprodukter", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpicmpheWVrd3F3a3l3bHBiYmFzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNDk4MDcsImV4cCI6MjA2MjcyNTgwN30.tQZl_c2h8IkBAMemoVQM0NdeNeGIdpMpRpBVKU3DWvU",
+    },
+  }).then((res) => res.json());
+
+  return data.map((id: any) => ({
+    params: { productname: id.productname },
+    props: { myData: id },
+  }));
+}
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<MainLayout title={myData.productname}>
+  <section class="grid_1-1">
+    <div>
+      <img src={myData.imgs} alt={myData.productname} />
+    </div>
+    <div>
+      <h2>{myData.productname}</h2>
+      <h3>Ingredienser</h3>
+      <p>{myData.ingrediens}</p>
+      <p>ANTAL</p>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  @media (min-width: 800px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+  }
+</style>
