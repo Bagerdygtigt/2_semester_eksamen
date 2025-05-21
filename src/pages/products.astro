@@ -32,8 +32,9 @@ console.log(data);
       <h3>Leder du efter noget du ikke kan finde?<br /> Skriv til en af vores butikker <a class="her" href="bagerier.astro">her</a></h3>
     </div>
 
-    <div>
-      <img class="coffeepicture" src="/imgs/coffeepicture.webp" alt="" />
+    <div class="coffeepicture">
+      <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player src="https://lottie.host/8f9014d0-dc6b-4441-a573-19ee55264191/B73frtdaoL.lottie" background="transparent" speed="1" style="width: 100%" loop autoplay></dotlottie-player>
     </div>
   </section>
 </MainLayout>
@@ -42,7 +43,7 @@ console.log(data);
     margin-top: 4rem;
   }
   .coffeepicture {
-    width: 40%;
+    width: 70%;
     margin-left: 9rem;
   }
 
@@ -77,7 +78,7 @@ console.log(data);
     }
 
     .coffeepicture {
-      width: 60%;
+      width: 110%;
     }
 
     h3 {
@@ -108,7 +109,7 @@ console.log(data);
     }
 
     .coffeepicture {
-      width: 60%;
+      width: 90%;
       margin-top: 3rem;
     }
   }
