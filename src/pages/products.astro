@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
 import ProductGrid from "../components/ProductGrid.astro";
+import Kategori from "../components/Kategori.astro";
 const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bagerdygtigsprodukter", {
   method: "GET",
   headers: {
@@ -11,7 +12,12 @@ console.log(data);
 ---
 
 <MainLayout>
-  <h1>SHOP BAGVÆRK</h1>
+  <section class="grid_1-1">
+    <h1>SHOP BAGVÆRK</h1>
+    <img class="shop" src="/imgs/shop.webp" alt="" />
+  </section>
+
+  <Kategori />
   <section class="grid_1-1-1">
     {
       data.map((products) => {
@@ -19,14 +25,81 @@ console.log(data);
       })
     }
   </section>
-</MainLayout>
 
+  <section class="grid_1-1">
+    <div>
+      <h3>Leder du efter noget du ikke kan finde?<br /> Skriv til en af vores butikker <a class="her" href="bagerier.astro">her</a></h3>
+    </div>
+
+    <div>
+      <img class="coffeeproduct" src="/imgs/products.webp" alt="" />
+    </div>
+  </section>
+</MainLayout>
 <style>
+  h1 {
+    margin-top: 4rem;
+  }
+  .coffeeproduct {
+    width: 40%;
+    margin-left: 9rem;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+
+  .her {
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .her:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+
   @media (min-width: 800px) {
     .grid_1-1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 10px;
+    }
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .coffeeproduct {
+      width: 60%;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+    .shop {
+      width: 130%;
+    }
+  }
+
+  @media (min-width: 800px) and (max-width: 1000px) {
+    .grid_1-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+
+    .coffeeproduct {
+      width: 60%;
+      margin-top: 3rem;
     }
   }
 </style>
