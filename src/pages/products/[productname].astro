@@ -21,23 +21,55 @@ console.log(myData);
 <MainLayout title={myData.productname}>
   <section class="grid_1-1">
     <div>
+      <h1>{myData.category}</h1>
+    </div>
+    <div>
+      <img src="/imgs/shop.webp" alt="" />
+    </div>
+  </section>
+  <section class="grid_1-1">
+    <div>
       <img src={myData.imgs} alt={myData.productname} />
     </div>
     <div>
       <h2>{myData.productname}</h2>
-      <h3>Ingredienser</h3>
+      <h3>Ingredienser:</h3>
       <p>{myData.ingrediens}</p>
-      <p>ANTAL</p>
+      <div class="grid_1-1">
+        <div>
+          <p>ANTAL</p>
+        </div>
+        <div>
+          <img class="singleviewpicture" src="/imgs/singleview.webp" alt="" />
+        </div>
+      </div>
     </div>
   </section>
-</MainLayout>
-
-<style>
-  @media (min-width: 800px) {
-    .grid_1-1 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+  <style>
+    body {
+      background-color: #fffdf5;
     }
-  }
-</style>
+    @media (min-width: 800px) {
+      .grid_1-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+      h3 {
+        font-size: 25px;
+      }
+
+      h1 {
+        margin-top: 3rem;
+      }
+
+      .singleviewpicture {
+        margin-top: 4.5rem;
+      }
+    }
+  </style>
+</MainLayout>

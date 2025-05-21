@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
+import Kategori from "../components/Kategori.astro";
 import ProductGrid from "../components/ProductGrid.astro";
 const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bagerdygtigsprodukter", {
   method: "GET",
@@ -11,7 +12,13 @@ console.log(data);
 ---
 
 <MainLayout>
-  <h1>SHOP BAGVÆRK</h1>
+  <section class="grid_1-1">
+    <h1>SHOP BAGVÆRK</h1>
+    <img class="shoppicture" src="/imgs/shop.webp" alt="" />
+  </section>
+
+  <Kategori />
+
   <section class="grid_1-1-1">
     {
       data.map((products) => {
@@ -19,14 +26,90 @@ console.log(data);
       })
     }
   </section>
-</MainLayout>
 
+  <section class="grid_1-1">
+    <div>
+      <h3>Leder du efter noget du ikke kan finde?<br /> Skriv til en af vores butikker <a class="her" href="bagerier.astro">her</a></h3>
+    </div>
+
+    <div>
+      <img class="coffeepicture" src="/imgs/coffeepicture.webp" alt="" />
+    </div>
+  </section>
+</MainLayout>
 <style>
+  h1 {
+    margin-top: 4rem;
+  }
+  .coffeepicture {
+    width: 40%;
+    margin-left: 9rem;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+
+  .her {
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .her:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+
   @media (min-width: 800px) {
     .grid_1-1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 10px;
+    }
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .coffeepicture {
+      width: 60%;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+    .shoppicture {
+      width: 130%;
+    }
+
+    #filter-buttons {
+      margin-bottom: 1rem;
+    }
+
+    #filter-buttons button {
+      margin-right: 10px;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (min-width: 800px) and (max-width: 1000px) {
+    .grid_1-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+
+    .coffeepicture {
+      width: 60%;
+      margin-top: 3rem;
     }
   }
 </style>
