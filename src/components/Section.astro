@@ -1,0 +1,29 @@
+---
+import Button from "../components/Button.astro";
+import KontaktForm from "../components/KontaktForm.astro";
+---
+
+<section>
+  <div>
+    <h3>100% ØKOLOGISK OG INGEN MADSPILD</h3>
+    <p>Bagerdygtigt har haft fokus på ordentligt, bæredygtigt og ansvarligt bagværk siden 2012. Vi arbejder med økologiske råvarer, lokale producenter og innovative løsninger som reduktion af madspild og genandvenselse af overskudsprodukter.</p>
+    <Button />
+  </div>
+  <img src="../public/imgs/forsidebillede.webp" alt="" />
+</section>
+<section>
+  <img src="../public/imgs/forsideillustrationer.webp" alt="" />
+  <div>
+    <h3>Skriv til os</h3>
+    <KontaktForm />
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 50px;
+    margin: 50px;
+</style>
