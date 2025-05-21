@@ -1,47 +1,166 @@
----
+<nav>
+  <div class="logo">
+    <a href="/" class="logo"><img src="../public/imgs/bagerdygtigt_logo.svg" alt="" /></a>
+  </div>
 
----
-
-<header>
-  <nav>
-    <a href="/" class="logo">Logo</a>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/products">Products</a></li>
-      <li><a href="/bagerier">Bagerier</a></li>
-    </ul>
-  </nav>
-</header>
+  <ul class="menu">
+    <li><a href="/products">SHOP BAGVÆRK</a></li>
+    <li><a href="/menukort">MENUKORT</a></li>
+    <li><a href="/bagerier">BAGERIER</a></li>
+    <li><a href="/about">BÆREDYGTIGHED</a></li>
+  </ul>
+  <div>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+</nav>
 
 <style>
-  header {
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    background-color: bisque;
-  }
-
+  /************ Menu ***********/
   nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem
-  }
+    padding: 0.5rem 1rem;
 
-  ul {
-    display: flex;
-    gap: 2rem;
-    list-style-type: none;
-  }
-
-  a.logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-
-  a, p {
-    text-transform: uppercase;
-    text-decoration: none;
     color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: 10%;
+    padding: 5px;
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    font-weight: 400;
+
+    font-size: 18px;
+    margin-left: auto;
+  }
+
+  .menu li {
+    margin-right: 20px;
+
+    border-width: 5cm;
+    float: left;
+  }
+  .menu li:hover {
+    color: black;
+
+    transition: all 0.3s ease;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu a {
+    display: block;
+    padding: 50px;
+    color: black;
+    text-decoration: none;
+    transition:
+      color 0.3s,
+      text-decoration-thickness 0.3s ease;
+    text-decoration-thickness: 0;
+  }
+
+  .menu a:hover {
+    color: black;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+  }
+
+  .burger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
+  .burger {
+    display: none;
+  }
+
+  /*********************************** Burgermenu ******************************/
+
+  @media screen and (max-width: 1050px) {
+    .menu {
+      display: none;
+    }
+    .burger {
+      display: block;
+      margin-right: 0.5rem;
+    }
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    }
+
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
+
+    nav.active .menu {
+      display: block;
+      background-color: #f6e8d2;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      margin-top: 6%;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      height: 1000px;
+    }
+    nav.active .menu li {
+      margin: 10px 20px;
+    }
+    li {
+      clear: left;
+      width: 95%;
+    }
+    nav.active .menu a {
+      font-size: 16px;
+      text-align: center;
+    }
   }
 </style>
+
+<script>
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+  const menu = document.querySelector(".menu");
+
+  burger.addEventListener("click", burgerClick);
+  function burgerClick() {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  }
+  menu.addEventListener("click", menuClick);
+  function menuClick() {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+  }
+</script>
