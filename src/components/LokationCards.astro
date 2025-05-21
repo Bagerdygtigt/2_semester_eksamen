@@ -1,0 +1,45 @@
+---
+const {image, alt, title, adress, times, link, illustration} = Astro.props;
+---
+
+<div class="locationcard">
+    <img class="frontpic" src={image} alt={alt}>
+    <div class="grid_1-1">
+      <div>
+        <h2>{title}</h2>
+        <p>{adress}</p>
+          <h3>Åbningstider</h3>
+          <p>{times}</p>
+            <button><a href={link}></a>Læs mere</button>
+        </div>
+        <div>
+        <img class="cardillustration" src={illustration} alt="illustration">
+        </div>
+    </div>
+</div>
+
+<style>
+
+.grid_1-1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.frontpic {
+  img {width: 100%;}
+  display: block;
+}
+
+.cardillustration {
+  width: 180px; }
+
+@media (min-width: 800px) {
+
+  .locationcard {
+  max-width: 350px;
+}
+.cardillustration {
+  display: none;
+}
+
+}
+</style>
