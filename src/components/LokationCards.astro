@@ -1,5 +1,6 @@
 ---
 const {image, alt, title, adress, times, link, illustration} = Astro.props;
+import Button from "../components/Button.astro";
 ---
 
 <div class="locationcard">
@@ -10,7 +11,7 @@ const {image, alt, title, adress, times, link, illustration} = Astro.props;
         <p>{adress}</p>
           <h3>Åbningstider</h3>
           <p>{times}</p>
-          <a href={link}>Læs mere</a>
+          <a href={link}><Button variant="primary" size="small" >LÆS MERE</Button></a>
         </div>
         <div>
         <img class="cardillustration" src={illustration} alt="illustration">
@@ -32,6 +33,10 @@ const {image, alt, title, adress, times, link, illustration} = Astro.props;
 .cardillustration {
   width: 180px; }
 
+  a {
+  text-decoration: none;
+}
+
 @media (min-width: 800px) {
 
   .locationcard {
@@ -41,5 +46,7 @@ const {image, alt, title, adress, times, link, illustration} = Astro.props;
   display: none;
 }
 
+
 }
+
 </style>
