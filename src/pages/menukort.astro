@@ -1,11 +1,108 @@
 ---
+import MenukortCard from "../components/MenukortCard.astro";
 import MainLayout from "../layout/MainLayout.astro";
 import "../style/style.css";
+
+// Menudata
+const morgenmad = {
+  title: "Morgenmad & Bagværk",
+  image: "/imgs/menukort-img1.webp",
+  items: [
+    {
+      ret: "Bolle med ost og valgfri kaffe",
+      beskrivelse: "En friskbagt, økologisk bolle fra vores eget bageri i Solrød – serveret med økologisk smør og lagret ost. Nydes med en valgfri, lokalbrygget kaffe.",
+      pris: "45,-",
+    },
+    {
+      ret: "Wienerbrød og valgfri kaffe",
+      beskrivelse: "Håndlavet, sprødt wienerbrød bagt på økologiske råvarer – perfekt ledsaget af en valgfri specialkaffe.",
+      pris: "48,-",
+    },
+    {
+      ret: "Smurt bolle",
+      beskrivelse: "Vores signatur-surdejsbolle, friskbagt og smurt med økologisk smør.",
+      pris: "48,-",
+    },
+    {
+      ret: "Microbrunch",
+      beskrivelse: "En lille, luksuriøs tallerken med økologisk yoghurt toppet med sprød granola og friske bær, håndskåret ost, og en lun, friskbagt bolle med smør og ost – samt et økologisk kogt æg.",
+      pris: "69,-",
+    },
+  ],
+};
+
+const frokost = {
+  title: "Sandwich & Toast",
+  image: "/imgs/menukort-img2.webp",
+  items: [
+    {
+      ret: "Kylling & Karry Salat",
+      beskrivelse: "Cremet økologisk kylling i en let, hjemmerørt karrydressing – serveret i en friskbagt surdejsbolle med sprød salat.",
+      pris: "48,-",
+    },
+    {
+      ret: "Laksesalat",
+      beskrivelse: "Koldrøget økologisk laks vendt i en let urtecreme med friske agurker og purløg – serveret i vores egen økologiske surdejsbolle.",
+      pris: "48,-",
+    },
+    {
+      ret: "Spicy tunsalat",
+      beskrivelse: "En smagfuld, krydret tunsalat med et strejf af chili og citron – lagt i en blød, friskbagt bolle fra vores eget bageri.",
+      pris: "48,-",
+    },
+    {
+      ret: "Hjemmelavet humus (vegetarisk)",
+      beskrivelse: "Silkeblød, økologisk humus med citron og spidskommen – serveret i vores friskbagte surdejsbolle med sprøde grøntsager.",
+      pris: "48,-",
+    },
+    {
+      ret: "Toast med Skinke & Ost",
+      beskrivelse: "Smeltet økologisk ost og skiver af økologisk skinke mellem to skiver ristet brød – sprødt, salt og uimodståeligt.",
+      pris: "48,-",
+    },
+    {
+      ret: "Toast med Kylling, Ost & Chili",
+      beskrivelse: "Fyldig toast med saftig økologisk kylling, smeltet ost og et lille chili-kick – en varm favorit med bid.",
+      pris: "48,-",
+    },
+    {
+      ret: "Toast med Pesto, tomat og mozarella (vegetarisk)",
+      beskrivelse: "Frisk basilikumpesto, skiver af økologisk tomat og smeltet mozzarella – ristet sprødt i vores eget brød.",
+      pris: "48,-",
+    },
+  ],
+};
+
+const kaffe = {
+  title: "Kaffe",
+  image: "/imgs/menukort-img3.webp",
+  items: [
+    { ret: "Espresso", pris: "28,-" },
+    { ret: "Americano", pris: "30,-" },
+    { ret: "Latte", pris: "42,-" },
+    { ret: "Cappuccino", pris: "42,-" },
+    { ret: "Flat White", pris: "42,-" },
+    { ret: "Iskaffe", pris: "45,-" },
+    { ret: "Varm Kakao", pris: "45,-" },
+    { ret: "Chai Latte", pris: "45,-" },
+  ],
+};
 ---
 
 <MainLayout>
-  <section class="grid_1-1">
-    <h1>MENU</h1>
-    <img class="farmpicture" src="/imgs/farm.webp" alt="gårdillustration" />
-  </section>
+  <h1>MENUKORT</h1>
+  <p class="opening-hours">Serveres hele dagen</p>
+
+  <MenukortCard {...morgenmad} />
+  <MenukortCard {...frokost} />
+  <MenukortCard {...kaffe} />
 </MainLayout>
+
+<style>
+  .opening-hours {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+</style>
