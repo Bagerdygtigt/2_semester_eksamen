@@ -4,13 +4,73 @@ import MainLayout from "../layout/MainLayout.astro";
 ---
 
 <MainLayout>
-  <BaeredygtighedCard illustration="/imgs/baeredygtigt1.webp" tekst="Vores hovedbageri ligger i Solrød Strand. Her arbejder vi med traditionelle bageteknikker, hvor alt som bliver bagt er 100% økologisk og bagt i stenovne. Vi bager både med gær og surdej, men vores fokus er økologisk surdejsbrød." />
+  <section class="intro">
+    <h1>DET BÆREDYGTIGE KONCEPT</h1>
+    <h3>100% ØKOLOGISK OG INGEN MADSPILD SIDEN 2012</h3>
+  </section>
 
-  <BaeredygtighedCard illustration="/imgs/baeredygtigt2.webp" tekst={`Hver morgen kører vores egne chauffører med vores brød, kage, boller og wienerbrød fra Solrød ud i vores fem Bagerdygtigt butikker i København. Find også vores produkter i de nye Alma-butikker.`} />
+  <section class="timeline">
+    <BaeredygtighedCard illustration="/imgs/baeredygtigt1.webp" tekst="Vores hovedbageri ligger i Solrød Strand. Her arbejder vi med traditionelle bageteknikker, hvor alt som bliver bagt er 100% økologisk og bagt i stenovne. Vi bager både med gær og surdej, men vores fokus er økologisk surdejsbrød." class="venstre" />
 
-  <BaeredygtighedCard illustration="/imgs/baeredygtigt3.webp" tekst={`Vores bagværk bliver solgt i butikkerne, men ved dagens afslutning bliver alt brød med kerner solgt i TooGoodToGo, og resten bliver brugt til at lave til toast.`} />
+    <BaeredygtighedCard illustration="/imgs/baeredygtigt2.webp" tekst="Hver morgen kører vores egne chauffører med vores brød, kage, boller og wienerbrød fra Solrød ud i vores fem Bagerdygtigt butikker i København. Find også vores produkter i de nye Alma-butikker." class="højre" offset={true} />
 
-  <BaeredygtighedCard illustration="/imgs/baeredygtigt4.webp" tekst={`Al overskydende wienerbrød bliver sendt tilbage til vores fabrik i Solrød og reproduceret til for eksempel romkugler og træstammer.`} />
+    <BaeredygtighedCard illustration="/imgs/baeredygtigt3.webp" tekst="Vores bagværk bliver solgt i butikkerne, men ved dagens afslutning bliver alt brød med kerner solgt i TooGoodToGo, og resten bliver brugt til at lave til toast." class="venstre" />
 
-  <BaeredygtighedCard illustration="/imgs/baeredygtigt5.webp" tekst="Vores mission er at inspirere andre til at tænke grønnere. Vi ønsker at levere smagsoplevelser på en tryg og ærlig måde, der både er gode for ganen og planeten." />
+    <BaeredygtighedCard illustration="/imgs/baeredygtigt4.webp" tekst="Al overskydende wienerbrød bliver sendt tilbage til vores fabrik i Solrød og reproduceret til for eksempel romkugler og træstammer." class="højre" offset={true} />
+
+    <BaeredygtighedCard illustration="/imgs/baeredygtigt5.webp" tekst="Vores mission er at inspirere andre til at tænke grønnere. Vi ønsker at levere smagsoplevelser på en tryg og ærlig måde, der både er gode for ganen og planeten." class="venstre" />
+
+    <img src="/imgs/streger.svg" alt="Dekorative streger" class="streger" />
+  </section>
 </MainLayout>
+
+<style>
+  .intro {
+    margin-top: 4rem;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 3rem;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .streger {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    justify-self: center;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .venstre {
+    grid-column: 1;
+  }
+
+  .højre {
+    grid-column: 3;
+  }
+
+  /* Responsivt design for mobile */
+  @media (max-width: 768px) {
+    .timeline {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .streger {
+      display: none;
+    }
+
+    .venstre,
+    .højre {
+      grid-column: 1;
+    }
+  }
+</style>
