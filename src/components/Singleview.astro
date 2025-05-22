@@ -1,13 +1,43 @@
 ---
-const {image, alt, title, subtitle, adress, text, times, hours} = Astro.props;
+const {image, alt, title, subtitle, adress, text, times, hours, reverse} = Astro.props;
 ---
 
-<div class="section">
+<div class={`singleviewcontainer ${reverse ? 'reverse' : ''}`}>
+
+<div class="text-content">
 <h2>{title}</h2>
 <h3>{subtitle}</h3>
 <p>{text}</p>
 <p>{adress}</p>
 <h3>{hours}</h3>
 <p>{times}</p>
-<img src={image} alt={alt}>
 </div>
+    <div class="image-content">
+<img src={image} alt={alt}/>
+</div>
+
+</div>
+
+<style>
+
+    @media (min-width: 800px) {
+    .singleviewcontainer {
+      display: flex;
+      gap: 4rem;
+      padding-bottom: 2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .singleviewcontainer.reverse {
+      flex-direction: row-reverse;
+    }
+
+   
+ img {
+    width: 600px;
+    display: block;
+    }
+    }
+
+</style>
