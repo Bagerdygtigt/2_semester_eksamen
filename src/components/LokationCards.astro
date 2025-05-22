@@ -10,7 +10,7 @@ const {image, alt, title, adress, times, link, illustration} = Astro.props;
         <p>{adress}</p>
           <h3>Åbningstider</h3>
           <p>{times}</p>
-            <button><a href={link}></a>Læs mere</button>
+          <a href={link}>Læs mere</a>
         </div>
         <div>
         <img class="cardillustration" src={illustration} alt="illustration">
