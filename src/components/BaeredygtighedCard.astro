@@ -1,0 +1,31 @@
+---
+const { tekst, illustration } = Astro.props;
+---
+
+<article class="baeredygtighed-card">
+  <img src={illustration} alt="" />
+  <p>{tekst}</p>
+</article>
+
+<style>
+  .baeredygtighed-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
+    margin: auto;
+    padding: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .baeredygtighed-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .baeredygtighed-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
