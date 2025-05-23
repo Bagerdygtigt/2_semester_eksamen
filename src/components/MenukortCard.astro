@@ -1,6 +1,6 @@
 ---
 // Props fra siden:
-const { title, time, image, items } = Astro.props;
+const { title, time, image, items, reverse = false } = Astro.props;
 ---
 
 <section class="card">
@@ -13,8 +13,10 @@ const { title, time, image, items } = Astro.props;
         items.map((item) => (
           <div class="item">
             <div class="item-text">
-              <strong>{item.ret}</strong>
-              {item.beskrivelse && <p>{item.beskrivelse}</p>}
+              <h6>
+                <strong>{item.ret}</strong>
+              </h6>
+              {item.beskrivelse && <p class="item-description">{item.beskrivelse}</p>}
             </div>
             <div class="item-price">{item.pris}</div>
           </div>
@@ -28,11 +30,7 @@ const { title, time, image, items } = Astro.props;
 
 <style>
   .divider {
-    color: var(--color-secondary-5);
-  }
-
-  h2 {
-    color: color: var(--color-secondary-7);
+    color: var(--color-secondary-2);
   }
 
   .card {
@@ -47,7 +45,6 @@ const { title, time, image, items } = Astro.props;
   }
 
   .menu-text {
-    color: var(--color-secondary-5);
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -67,14 +64,18 @@ const { title, time, image, items } = Astro.props;
   }
 
   .item-text p {
-    color: var(--color-secondary-5);
+    margin: 0.45rem 0 0;
+    /* font-size: 0.9rem; */
+  }
+
+  .item-description {
+    font-style: italic;
     margin: 0.25rem 0 0;
-    font-size: 0.9rem;
   }
 
   .item-price {
     text-align: right;
-    font-weight: bold;
+    /* font-weight: bold; */
   }
 
   /* Illustration placeres under indholdet på mobil */
