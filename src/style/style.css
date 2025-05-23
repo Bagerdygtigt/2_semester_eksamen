@@ -7,15 +7,18 @@
 @import url("https://use.typekit.net/tcb1jhn.css");
 
 /****** Global styling ********/
-
 :root {
   /* Farver */
   --color-primary: #fffdf5;
   --color-secondary: #f9aa16;
   --color-accent: #69733d;
-  --color-text: #000000;
   --color-white: #ffffff;
+  --color-text: #1c1c1c;
+  --color-text-soft: #33322e;
+  --color-text-light-grey: rgb(189, 189, 189);
+  --color-text-light-grey-2: rgb(106, 102, 102);
 
+  /* Farvesystem */
   --color-secondary-2: #fff7d6;
   --color-secondary-3: #feecaa;
   --color-secondary-4: #fddb74;
@@ -27,7 +30,7 @@
 
   --color-accent-2: #f6f7ee;
   --color-accent-3: #ebecdb;
-  --color-accent-4: #d8dcbb;
+  --color-accent-4: #2f2f2d;
   --color-accent-5: #879250;
   --color-accent-6: #505932;
   --color-saccent-7: #42482c;
@@ -35,30 +38,29 @@
   --color-accent-9: #1d2112;
 
   /* Typografi */
-
   --font-heading: "Bebas Neue", sans-serif;
   --font-tagline: "Raleway", sans-serif;
   --font-base: "nimbus-sans", sans-serif;
 
-  --font-desk-size-base: clamp(1rem, 2.5vw, 1.25rem);
-  --font-desk-size-xs: clamp(1.25rem, 3vw, 1.875rem); /* skal opdateres */
-  --font-desk-size-s: clamp(1.25rem, 3vw, 1.875rem);
-  --font-desk-size-m: clamp(1.75rem, 4vw, 3.125rem);
-  --font-desk-size-l: clamp(2.5rem, 5vw, 5.625rem);
+  /* Font sizes (mobil til desktop med clamp) */
+  --font-size-xs: clamp(0.8125rem, 1.4vw, 1rem); /* 13–16px */
+  --font-size-s: clamp(0.8125rem, 1.2vw, 0.875rem); /* 13–14px */
 
-  --font-mob-size-base: 16px; /* skal opdateres */
-  --font-mob-size-s: 14px; /* skal opdateres */
-  --font-mob-size-m: 14px; /* skal opdateres */
-  --font-mob-size-l: clamp(2.5rem, 5vw, 5.625rem); /* skal opdateres */
+  --font-size-m: clamp(1rem, 2vw, 1.25rem); /* 16–20px */
+  --font-size-l: clamp(1.25rem, 2.5vw, 2rem); /* 20–32px */
+  --font-size-xl: clamp(2.25rem, 5vw, 4rem); /* 36–64px */
 
-  --font-weight-s: 600;
-  --font-weight-m: 700;
-  --font-weight-s: 800;
+  /* Font weights */
+  --font-weight-regular: 300;
+  --font-weight-medium: 400;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 600;
+  --font-weight-heavy: 700;
 
   /* Linjehøjde */
-  --line-height-s: 1.6;
-  --line-height-m: 1.8;
-  --line-height-l: 2;
+  --line-height-s: 1.4;
+  --line-height-m: 1.6;
+  --line-height-l: 1.8;
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -73,65 +75,92 @@
   --radius-lg: 16px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/****** --------------------------------- ********/
-
-/* Mobil */
+/* --------- Fundament --------  */
+/* Base style */
 
 body {
   font-family: var(--font-base);
-  font-size: var(--font-mob-size-base);
-  line-height: var(--line-height-s);
-}
-
-/* Desktop */
-
-body {
-  font-family: var(--font-base);
-  font-size: var(--font-desk-size-base);
-  color: var(--color-text);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-m);
+  color: var(--color-text-soft);
   background-color: var(--color-primary);
-  line-height: var(--line-height-s);
-  /* padding: var(--spacing-md); */
+  margin: 0;
+  padding: var(--spacing-md);
 }
+
+/* Headings */
 
 h1 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: var(--font-desk-size-l);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-heavy);
+  line-height: var(--line-height-s);
   color: var(--color-secondary);
-}
-
-h2,
-h3 {
-  font-family: var(--font-tagline);
-  color: var(--color-text);
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-sm);
 }
 
 h2 {
-  font-weight: var(--font-weight-s);
-  font-size: var(--font-desk-size-m);
+  color: var(--color-text-light-grey-2);
+  /* color: var(--color-accent-5); */
+  /* color: rgb(70, 67, 67); */
+  /* color: var(--color-accent-8); */
+  font-family: var(--font-tagline);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-bold);
   line-height: var(--line-height-s);
+  margin-bottom: var(--spacing-xs);
 }
 
 h3 {
-  font-weight: var(--font-weight-s);
-  font-size: var(--font-desk-size-s);
+  color: var(--color-text-soft);
+  /* color: var(--color-accent-8); */
+  font-family: var(--font-tagline);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-s);
+  margin-bottom: var(--spacing-xs);
 }
 
-/******** Button, hover + andet */
+h4 {
+  color: var(--color-text-soft);
+  /* color: var(--color-accent-8); */
+  font-family: var(--font-tagline);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-s);
+  margin-bottom: var(--spacing-xs);
+}
 
-/* 
-button {
-  background-color: var(--color-primary);
-  color: white;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  border: none;
-  cursor: pointer;
-} */
+h6 {
+  color: var(--color-text-soft);
+  /* color: #c0b095; */
+  /* color: var(--color-accent-8); */
+  font-family: var(--font-tagline);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-s);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Paragraph */
+
+p {
+  color: var(--color-text-light-grey-2);
+  /* color: var(--color-accent-8); */
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Responsive adjustments */
+
+@media (min-width: 768px) {
+  /* Ingen ændringer nødvendige her længere – clamp håndterer det! */
+}
