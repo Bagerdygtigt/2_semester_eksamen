@@ -1,0 +1,53 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<form class="kontakt-form">
+  <div class="row">
+    <input type="text" name="navn" placeholder="Navn" required />
+    <input type="tel" name="telefon" placeholder="Telefon" required />
+  </div>
+  <input type="email" name="email" placeholder="Email" required />
+  <textarea name="besked" placeholder="Besked" rows="5" required></textarea>
+  <Button variant="primary" size="big">SEND</Button>
+</form>
+
+<style>
+  .kontakt-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .row {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .row input {
+    flex: 1;
+  }
+
+  input,
+  textarea {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent; 
+  }
+
+  textarea {
+    resize: none; 
+  }
+
+  @media (max-width: 600px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+</style>
