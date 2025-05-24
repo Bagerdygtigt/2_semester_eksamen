@@ -90,8 +90,13 @@ const kaffe = {
 ---
 
 <MainLayout>
-  <h1>MENUKORT</h1>
-  <p class="h1-tagline">Serveres hele dagen</p>
+  <section class="intro">
+    <h1>VORES MENU</h1>
+    <h3 class="h1-tagline">Serveres hele dagen</h3>
+  </section>
+
+  <!-- <h1>MENUKORT</h1>
+  <p class="h1-tagline">Serveres hele dagen</p> -->
 
   <MenukortCard {...morgenmad} />
   <MenukortCard {...frokost} reverse={true} />
@@ -103,6 +108,11 @@ const kaffe = {
 </MainLayout>
 
 <style>
+  .intro {
+    margin-top: 4rem;
+    text-align: left;
+    padding: 0 1rem;
+  }
   /* .opening-hours {
     font-size: var(--font-size-h5);
     margin-bottom: 2rem;

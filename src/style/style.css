@@ -20,7 +20,7 @@
   --color-secondary-3: #feecaa;
   --color-secondary-4: #fddb74;
   --color-secondary-5: #f9aa17;
-  --color-secondary-6: #c36d0a;
+  --color-secondary-6: #ab9e90;
   --color-secondary-7: #9a5512;
   --color-secondary-8: #7c4712;
   --color-secondary-9: #432307;
@@ -84,7 +84,7 @@ h1 {
   line-height: var(--line-height-s);
   color: var(--color-secondary);
   letter-spacing: 0.5px;
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-1);
 }
 
 .h1-tagline {
@@ -146,24 +146,61 @@ a:hover {
   color: var(--color-secondary);
 }
 
+/* --------- Header -------- */
+
+nav {
+  /* background-color: var(--color-secondary-2); */
+  border-bottom: 2px solid var(--color-secondary-2);
+  padding: 2rem 1.5rem;
+}
+
+.menu a {
+  padding: 50px;
+  color: var(--color-accent-9);
+  text-decoration: none;
+  transition: color 0.3s, text-decoration-thickness 0.3s ease;
+  text-decoration-thickness: 0;
+}
+
+.menu a:hover {
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
 /* --------- Footer -------- */
 
 /* Footer */
+
+.site-footer {
+  font-family: var(--font-tagline);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  border-top: 2px solid var(--color-secondary-2);
+}
+
 .footer-column a {
-  color: var(--color-text);
+  color: var(--color-accent-9);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-
-.site-footer {
-  color: var(--color-text);
-  font-weight: var(--font-weight-normal);
-  font-family: var(--font-tagline);
-  font-size: var(--font-size-p-small);
-}
-
 .footer-column a:hover {
   color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.footer-titel {
+  font-family: var(--font-tagline);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+}
+
+.footer-titel-2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* --------- Responsive Utilities -------- */

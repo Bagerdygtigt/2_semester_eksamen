@@ -1,9 +1,9 @@
 <footer class="site-footer">
   <div>
     <div class="left-content">
-      <img src="../public/imgs/bagerdygtigt_logo.svg" alt="Bagerdygtigt Logo" class="footer-logo" />
+      <img src="../public/imgs/logo2.svg" alt="Bagerdygtigt Logo" class="footer-logo" />
       <div class="footer-column left">
-        <p class="footer-titel">Bagerdygtigt - Danmarks økologiske bageri</p>
+        <p class="footer-titel-2">Danmarks økologiske bager</p>
         <a href="#">Butikker</a>
         <a href="#">Se smiley rapport</a>
       </div>
@@ -17,13 +17,12 @@
 
   <div class="footer-column right">
     <p class="footer-titel">+45 44 40 22 24 <br />Kundeservice@bagerdygtigt.dk</p>
-    <p class="copyright">Est. 2012 © Bagerdygtigt</p>
+    <p class="footer-titel">Est. 2012 © Bagerdygtigt</p>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Elegant tynd linje */
     padding: 2rem 1.5rem;
     display: grid;
     gap: 2rem;
@@ -31,8 +30,10 @@
     grid-template-columns: 1fr;
   }
 
+  /* Fjern margin på p for bedre vertikal kontrol */
   .site-footer p {
-    margin: 0.25rem 0;
+    margin: 0;
+    padding: 0.25rem 0; /* evt. luft uden margin */
   }
 
   .footer-logo {
@@ -48,16 +49,43 @@
     transition: color 0.3s ease;
   }
 
+  /* Fjern align-self: end for footer-column.right - det skaber problemer */
   .footer-column.right {
-    align-self: end;
+    /* align-self: end; fjernet */
   }
 
-  /* 🔹 Desktop styles */
+  /* Mobil: vertikal centering af footer-columns left og right */
+  @media (max-width: 767px) {
+    .site-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .left-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .footer-column.left,
+    .footer-column.right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  /* Desktop styles */
   @media (min-width: 768px) {
     .site-footer {
       grid-template-columns: 1fr 1fr 1fr;
-
       padding: 2rem 3rem;
+      align-items: stretch; /* sikrer at alle grid-celler får samme højde */
     }
 
     .left-content {
@@ -73,45 +101,28 @@
       margin: 0 auto;
     }
 
-    /* .left-text p {
-      margin: 0.25rem 0;
-    } */
-
-    .footer-column.left {
+    .footer-column.left,
+    .footer-column.right,
+    .footer-column.center {
       display: flex;
       flex-direction: column;
       height: 100%;
       justify-content: space-between;
     }
 
-    .footer-column.center {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end; /* 🚩 Juster til bund */
-      align-items: center; /* højrejustér horisontalt */
-      text-align: right;
-      height: 100%;
-      gap: 0.5rem;
-    }
-
-    /* 
+    /* Kun denne regel ændres til: */
     .footer-column.center {
       display: flex;
       flex-direction: column;
       height: 100%;
-      justify-content: space-between;
-      align-items: end;
+      justify-content: flex-end; /* vigtig ændring */
+      align-items: center; /* vigtig ændring */
       text-align: center;
       gap: 0.5rem;
-    } */
+    }
 
     .footer-column.right {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
       text-align: right;
-      align-self: end;
     }
   }
 </style>
