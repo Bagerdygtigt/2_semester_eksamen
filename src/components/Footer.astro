@@ -1,9 +1,9 @@
 <footer class="site-footer">
-  <div class="footer-column left">
+  <div>
     <div class="left-content">
       <img src="../public/imgs/bagerdygtigt_logo.svg" alt="Bagerdygtigt Logo" class="footer-logo" />
-      <div class="left-text">
-        <p><strong>Bagerdygtigt - Danmarks økologiske bageri</strong></p>
+      <div class="footer-column left">
+        <p class="footer-titel">Bagerdygtigt - Danmarks økologiske bageri</p>
         <a href="#">Butikker</a>
         <a href="#">Se smiley rapport</a>
       </div>
@@ -11,12 +11,12 @@
   </div>
 
   <div class="footer-column center">
-    <p class="follow-heading"><strong> Følg os på:</strong></p>
+    <!-- <p class="footer-titel">Følg os på:</p> -->
     <a href="#" target="_blank">Instagram</a>
   </div>
 
   <div class="footer-column right">
-    <p>+45 44 40 22 24 <br />Kundeservice@bagerdygtigt.dk</p>
+    <p class="footer-titel">+45 44 40 22 24 <br />Kundeservice@bagerdygtigt.dk</p>
     <p class="copyright">Est. 2012 © Bagerdygtigt</p>
   </div>
 </footer>
@@ -29,16 +29,10 @@
     gap: 2rem;
     text-align: center;
     grid-template-columns: 1fr;
-    font-size: 0.875rem; /* ca. 14px */
-    color: rgba(30, 30, 30, 0.85);
-    line-height: 1.6;
   }
 
   .site-footer p {
-    font-size: 0.875rem;
     margin: 0.25rem 0;
-    color: rgba(30, 30, 30, 0.85);
-    font-weight: 400;
   }
 
   .footer-logo {
@@ -51,39 +45,24 @@
   .footer-column a {
     display: block;
     margin: 0.25rem 0;
-    color: rgba(30, 30, 30, 0.85);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    font-weight: 400;
     transition: color 0.3s ease;
   }
 
-  .footer-column a:hover {
-    color: var(--color-secondary);
-  }
-
-  .follow-heading {
-    font-weight: 500;
-    font-size: 0.875rem;
-    margin-bottom: 0.25rem;
-  }
-
   .footer-column.right {
-    font-size: 0.75rem;
-    color: rgba(0, 0, 0, 0.5);
-    align-self: end; /* Sikrer flugt med nederste linje */
+    align-self: end;
   }
 
   /* 🔹 Desktop styles */
   @media (min-width: 768px) {
     .site-footer {
       grid-template-columns: 1fr 1fr 1fr;
-      text-align: left;
-      align-items: end;
+
       padding: 2rem 3rem;
     }
 
     .left-content {
+      height: 100%;
+      text-align: left;
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 1.5rem;
@@ -94,22 +73,43 @@
       margin: 0 auto;
     }
 
-    .left-text p {
+    /* .left-text p {
       margin: 0.25rem 0;
-      font-weight: 400;
+    } */
+
+    .footer-column.left {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
     }
 
     .footer-column.center {
       display: flex;
       flex-direction: column;
-      height: 100%; /* fylder hele højden i grid-rækken */
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
+      justify-content: flex-end; /* 🚩 Juster til bund */
+      align-items: center; /* højrejustér horisontalt */
+      text-align: right;
+      height: 100%;
       gap: 0.5rem;
     }
 
+    /* 
+    .footer-column.center {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      align-items: end;
+      text-align: center;
+      gap: 0.5rem;
+    } */
+
     .footer-column.right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
       text-align: right;
       align-self: end;
     }

@@ -9,23 +9,23 @@ const morgenmad = {
   image: "/imgs/menukort-img1.webp",
   items: [
     {
-      ret: "Bolle med ost og valgfri kaffe",
-      beskrivelse: "En friskbagt, økologisk bolle fra vores eget bageri i Solrød – serveret med økologisk smør og lagret ost. Nydes med en valgfri, lokalbrygget kaffe.",
+      ret: "Bolle med ost & valgfri kaffe",
+      beskrivelse: "Friskbagt, økologisk surdejs-bolle med smør og lagret ost & valgfri kaffe.",
       pris: "45,-",
     },
     {
-      ret: "Wienerbrød og valgfri kaffe",
-      beskrivelse: "Håndlavet, sprødt wienerbrød bagt på økologiske råvarer – perfekt ledsaget af en valgfri specialkaffe.",
+      ret: "Wienerbrød & valgfri kaffe",
+      beskrivelse: "Sprødt, håndlavet wienerbrød. Inkl. valgfri kaffe.",
       pris: "48,-",
     },
     {
       ret: "Smurt bolle",
-      beskrivelse: "Vores signatur-surdejsbolle, friskbagt og smurt med økologisk smør.",
+      beskrivelse: "Vores signatur surdejsbolle med øko-smør.",
       pris: "48,-",
     },
     {
       ret: "Microbrunch",
-      beskrivelse: "En lille, luksuriøs tallerken med økologisk yoghurt toppet med sprød granola og friske bær, håndskåret ost, og en lun, friskbagt bolle med smør og ost – samt et økologisk kogt æg.",
+      beskrivelse: "Yoghurt med granola og bær, ost, kogt æg og lun bolle med smør og ost.",
       pris: "69,-",
     },
   ],
@@ -37,37 +37,37 @@ const frokost = {
   items: [
     {
       ret: "Kylling & Karry Salat",
-      beskrivelse: "Cremet økologisk kylling i en let, hjemmerørt karrydressing – serveret i en friskbagt surdejsbolle med sprød salat.",
+      beskrivelse: "Økokylling i hjemmelavet karrydressing med salat i surdejsbolle.",
       pris: "48,-",
     },
     {
       ret: "Laksesalat",
-      beskrivelse: "Koldrøget økologisk laks vendt i en let urtecreme med friske agurker og purløg – serveret i vores egen økologiske surdejsbolle.",
+      beskrivelse: "Koldrøget laks i urtecreme med agurk og purløg i surdejsbolle.",
       pris: "48,-",
     },
     {
       ret: "Spicy tunsalat",
-      beskrivelse: "En smagfuld, krydret tunsalat med et strejf af chili og citron – lagt i en blød, friskbagt bolle fra vores eget bageri.",
+      beskrivelse: "Tunsalat med et strejf af chili og citron i surdejsbolle",
       pris: "48,-",
     },
     {
       ret: "Hjemmelavet humus (vegetarisk)",
-      beskrivelse: "Silkeblød, økologisk humus med citron og spidskommen – serveret i vores friskbagte surdejsbolle med sprøde grøntsager.",
+      beskrivelse: "Humus med citron og spidskommen – serveret i vores friskbagte surdejsbolle med sprøde grøntsager.",
       pris: "48,-",
     },
     {
       ret: "Toast med Skinke & Ost",
-      beskrivelse: "Smeltet økologisk ost og skiver af økologisk skinke mellem to skiver ristet brød – sprødt, salt og uimodståeligt.",
+      beskrivelse: "Smeltet økologisk ost og skinke i ristet brød.",
       pris: "48,-",
     },
     {
       ret: "Toast med Kylling, Ost & Chili",
-      beskrivelse: "Fyldig toast med saftig økologisk kylling, smeltet ost og et lille chili-kick – en varm favorit med bid.",
+      beskrivelse: "Fyldig toast med kylling, ost og et strejf af chili.",
       pris: "48,-",
     },
     {
       ret: "Toast med Pesto, tomat og mozarella (vegetarisk)",
-      beskrivelse: "Frisk basilikumpesto, skiver af økologisk tomat og smeltet mozzarella – ristet sprødt i vores eget brød.",
+      beskrivelse: "Basilikumpesto, tomat og smeltet mozzarella i ristet brød.",
       pris: "48,-",
     },
   ],
@@ -91,16 +91,38 @@ const kaffe = {
 
 <MainLayout>
   <h1>MENUKORT</h1>
-  <p class="opening-hours">Serveres hele dagen</p>
+  <p class="h1-tagline">Serveres hele dagen</p>
 
   <MenukortCard {...morgenmad} />
-  <MenukortCard {...frokost} />
+  <MenukortCard {...frokost} reverse={true} />
   <MenukortCard {...kaffe} />
+
+  <!-- <MenukortCard {...morgenmad} />
+<MenukortCard {...frokost} reverse={true} />
+<MenukortCard {...kaffe} /> -->
 </MainLayout>
 
 <style>
-  .opening-hours {
-    font-style: italic;
+  /* .opening-hours {
+    font-size: var(--font-size-h5);
     margin-bottom: 2rem;
-  }
+  } */
 </style>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll(".card").forEach((card) => {
+    card.classList.add("fade-in");
+    observer.observe(card);
+  });
+</script>
