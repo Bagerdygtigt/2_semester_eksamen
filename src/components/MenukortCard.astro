@@ -3,7 +3,7 @@
 const { title, time, image, items, reverse = false } = Astro.props;
 ---
 
-<section class="card">
+<section class={`card ${reverse ? "reverse" : ""}`}>
   <div class="menu-text">
     <h2>{title}</h2>
     {time && <p class="time">{time}</p>}
@@ -13,12 +13,10 @@ const { title, time, image, items, reverse = false } = Astro.props;
         items.map((item) => (
           <div class="item">
             <div class="item-text">
-              <h6>
-                <strong>{item.ret}</strong>
-              </h6>
+              <h3>{item.ret}</h3>
               {item.beskrivelse && <p class="item-description">{item.beskrivelse}</p>}
             </div>
-            <div class="item-price">{item.pris}</div>
+            <h3 class="item-price">{item.pris}</h3>
           </div>
         ))
       }
@@ -30,14 +28,17 @@ const { title, time, image, items, reverse = false } = Astro.props;
 
 <style>
   .divider {
-    color: var(--color-secondary-2);
+    border: none;
+    border-top: 1px solid #fddb74;
+    margin: 0.2rem 0;
+    width: 100%;
   }
 
   .card {
     display: grid;
-    gap: 1.5rem;
+    gap: 1rem;
     padding-block: 4rem; /* mere luft top/bund */
-    /* border-top: 1px solid #d69e23;  */
+    /* border-top: 1px solid #d69e23; */
   }
 
   .card:first-of-type {
@@ -64,13 +65,7 @@ const { title, time, image, items, reverse = false } = Astro.props;
   }
 
   .item-text p {
-    margin: 0.45rem 0 0;
-    /* font-size: 0.9rem; */
-  }
-
-  .item-description {
-    font-style: italic;
-    margin: 0.25rem 0 0;
+    font-weight: 300;
   }
 
   .item-price {
@@ -89,12 +84,45 @@ const { title, time, image, items, reverse = false } = Astro.props;
   /* Desktop layout */
   @media (min-width: 768px) {
     .card {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      margin-left: 4rem;
+      margin-right: 4rem;
       grid-template-columns: 2fr 1fr;
       align-items: start;
+    }
+
+    .card.reverse {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    .card.reverse .menu-text {
+      order: 2;
+      padding-left: 2rem;
+    }
+
+    .card.reverse .illustration {
+      order: 1;
+      padding-right: 2rem;
     }
 
     .illustration {
       align-self: center;
     }
+  }
+
+  /* Animation */
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 1.2s ease,
+      transform 1.2s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
