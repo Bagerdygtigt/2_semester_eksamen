@@ -1,4 +1,5 @@
 ---
+import Button from "../../components/Button.astro";
 import MainLayout from "../../layout/MainLayout.astro";
 
 export async function getStaticPaths() {
@@ -34,22 +35,86 @@ console.log(myData);
     <div>
       <h2>{myData.productname}</h2>
       <h3>Ingredienser:</h3>
-      <p>{myData.ingrediens}</p>
+      <p class="ingredienser">{myData.ingrediens}</p>
       <div class="grid_1-1">
         <div>
-          <p>ANTAL</p>
-        </div>
-        <div>
-          <img class="singleviewpicture" src="/imgs/singleview.webp" alt="" />
+          <p class="antal">ANTAL:</p>
+      
+          <section class="counter-wrapper">
+            {
+            <button id="minus">-</button>
+              <p id = "counter">0</p> 
+                <button id="plus">+</button>
+            }
+          </section>
+      
+          <Button variant="primary" size="medium">TILFØJ TIL KURV</Button>
         </div>
       </div>
+      
+      <img class="singleviewpicture" src="/imgs/singleview.webp" alt="" />
     </div>
   </section>
+  <script type="module">
+    document.addEventListener("DOMContentLoaded", () => {
+    let count = 0;
+
+    const counterDisplay = document.getElementById("counter");
+    const plusBtn = document.getElementById("plus");
+    const minusBtn = document.getElementById("minus");
+
+    plusBtn.addEventListener("click", () => {
+        count += 1;
+        counterDisplay.textContent = count;
+    });
+
+    minusBtn.addEventListener("click", () => {
+        count -= 1;
+        counterDisplay.textContent = count;
+    });
+});
+</script>
+
   <style>
-    body {
-      background-color: #fffdf5;
-    }
-    @media (min-width: 800px) {
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 3px solid var(--color-accent);
+    margin-bottom: 1rem;
+    width: fit-content;
+  } 
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border: var(--color-accent);
+    color: var(--color-accent);
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  #counter {
+    min-width: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .antal{
+ margin-top: 2rem;
+}
+.ingredienser{
+padding-right: 9rem;
+}
+.singleviewpicture{
+width: 10%;
+margin-top: 2rem;
+}
+
+
+
+
+    @media (min-width: 1250px) {
       .grid_1-1 {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -66,10 +131,24 @@ console.log(myData);
       h1 {
         margin-top: 3rem;
       }
-
       .singleviewpicture {
-        margin-top: 4.5rem;
+        width: 10%;
+        margin-top: 3rem;
       }
+
     }
+
+    @media (min-width: 1050px) and (max-width: 1250px){
+      .grid_1-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+    .singleviewpicture {
+        width: 9%;
+        margin-top: 0.5rem;
+      }
+
+   }
   </style>
 </MainLayout>
