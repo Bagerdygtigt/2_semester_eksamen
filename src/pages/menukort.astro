@@ -2,11 +2,12 @@
 import MenukortCard from "../components/MenukortCard.astro";
 import MainLayout from "../layout/MainLayout.astro";
 import "../style/style.css";
+import Button from "../components/Button.astro";
 
 // Menudata
 const morgenmad = {
   title: "Morgenmad & Bagværk",
-  image: "/imgs/menukort-img1.webp",
+  image: "/imgs/menubreakfast1.svg",
   items: [
     {
       ret: "Bolle med ost & valgfri kaffe",
@@ -33,7 +34,7 @@ const morgenmad = {
 
 const frokost = {
   title: "Sandwich & Toast",
-  image: "/imgs/menukort-img2.webp",
+  image: "/imgs/menubreakfast2.svg",
   items: [
     {
       ret: "Kylling & Karry Salat",
@@ -75,7 +76,7 @@ const frokost = {
 
 const kaffe = {
   title: "Kaffe",
-  image: "/imgs/menukort-img3.webp",
+  image: "/imgs/menubreakfast3.svg",
   items: [
     { ret: "Espresso", pris: "28,-" },
     { ret: "Americano", pris: "30,-" },

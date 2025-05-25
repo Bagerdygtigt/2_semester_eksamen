@@ -16,24 +16,23 @@
   </div>
 
   <div class="footer-column right">
-    <p class="footer-titel">+45 44 40 22 24 <br />Kundeservice@bagerdygtigt.dk</p>
+    <p class="footer-titel">+45 44 40 22 24 <br />Kontakt@bagerdygtigt</p>
     <p class="footer-titel">Est. 2012 © Bagerdygtigt</p>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    padding: 2rem 1.5rem;
+    padding: 4rem 1.5rem;
     display: grid;
     gap: 2rem;
     text-align: center;
     grid-template-columns: 1fr;
   }
 
-  /* Fjern margin på p for bedre vertikal kontrol */
   .site-footer p {
     margin: 0;
-    padding: 0.25rem 0; /* evt. luft uden margin */
+    padding: 0.25rem 0;
   }
 
   .footer-logo {
@@ -49,12 +48,6 @@
     transition: color 0.3s ease;
   }
 
-  /* Fjern align-self: end for footer-column.right - det skaber problemer */
-  .footer-column.right {
-    /* align-self: end; fjernet */
-  }
-
-  /* Mobil: vertikal centering af footer-columns left og right */
   @media (max-width: 767px) {
     .site-footer {
       display: flex;
@@ -80,12 +73,12 @@
     }
   }
 
-  /* Desktop styles */
+  /* Desktop */
   @media (min-width: 768px) {
     .site-footer {
       grid-template-columns: 1fr 1fr 1fr;
       padding: 2rem 3rem;
-      align-items: stretch; /* sikrer at alle grid-celler får samme højde */
+      align-items: stretch; /* grid-celler får samme højde */
     }
 
     .left-content {
@@ -110,13 +103,12 @@
       justify-content: space-between;
     }
 
-    /* Kun denne regel ændres til: */
     .footer-column.center {
       display: flex;
       flex-direction: column;
       height: 100%;
-      justify-content: flex-end; /* vigtig ændring */
-      align-items: center; /* vigtig ændring */
+      justify-content: flex-end;
+      align-items: center;
       text-align: center;
       gap: 0.5rem;
     }
