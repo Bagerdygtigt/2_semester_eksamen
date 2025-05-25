@@ -1,6 +1,6 @@
 ---
-import MainLayout from "../layout/MainLayout.astro";
 import ProductGrid from "../components/ProductGrid.astro";
+import MainLayout from "../layout/MainLayout.astro";
 import TopGrid from "../components/TopGrid.astro";
 import BottomGrid from "../components/BottomGrid.astro";
 
@@ -16,18 +16,21 @@ const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bager
   <TopGrid />
 
   <div class="grid_1-1-1-1-1">
-    <a class="category activ" href="/products">Alt bagværk</a>
+    <a class="category" href="/products">Alt bagværk</a>
     <a class="category" href="/broed">Brød</a>
     <a class="category" href="/boller">Boller</a>
     <a class="category" href="/kage">Kage</a>
-    <a class="category" href="/wienerbroed">Wienerbrød</a>
+    <a class="category activ" href="/wienerbroed">Wienerbrød</a>
   </div>
 
   <section class="grid_1-1-1">
     {
-      data.map((products) => {
-        return <ProductGrid data={products} />;
-      })
+      data
+        .filter((product) => product.category === "wienerbrød")
+        .map((products) => {
+          console.log(products);
+          return <ProductGrid data={products} />;
+        })
     }
   </section>
   <BottomGrid />
