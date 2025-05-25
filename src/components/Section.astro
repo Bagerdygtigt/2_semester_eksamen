@@ -4,16 +4,17 @@ import KontaktForm from "../components/KontaktForm.astro";
 ---
 
 <section>
-  <div>
-    <h3>100% ØKOLOGISK OG INGEN MADSPILD</h3>
-    <p>Bagerdygtigt har haft fokus på ordentligt, bæredygtigt og ansvarligt bagværk siden 2012. Vi arbejder med økologiske råvarer, lokale producenter og innovative løsninger som reduktion af madspild og genandvenselse af overskudsprodukter.</p>
+  <div class="tekst">
+    <h2>100% ØKOLOGISK OG INGEN MADSPILD</h2>
+    <p>Bagerdygtigt har haft fokus på ordentligt, bæredygtigt og ansvarligt bagværk siden 2012. <br /> <br />Vi arbejder med økologiske råvarer, lokale producenter og innovative løsninger som reduktion af madspild og genandvenselse af overskudsprodukter.</p>
     <Button variant="primary" size="small">LÆS MERE</Button>
   </div>
   <img src="../public/imgs/forsidebillede.webp" alt="" />
 </section>
+
 <section>
   <img src="../public/imgs/forsideillustrationer.webp" alt="" />
-  <div>
+  <div class="form">
     <h3>Skriv til os</h3>
     <KontaktForm />
   </div>
@@ -25,6 +26,136 @@ import KontaktForm from "../components/KontaktForm.astro";
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     padding: 50px;
-    margin: 50px;
+    margin: 10px;
+    align-items: center;
+  }
+
+  section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .form {
+    padding: 50px;
+    padding-top: 70px;
+    margin-top: 100px;
+  }
+
+  p {
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  .tekst {
+    margin-top: 70px;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 35px;
+  }
+
+  h3 {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Tablet styles */
+  @media (max-width: 768px) {
+    section {
+      gap: 30px;
+      padding: 30px 20px;
+      margin: 5px;
+    }
+
+    .form {
+      padding: 30px 20px;
+      padding-top: 50px;
+      margin-top: 50px;
+    }
+
+    .tekst {
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      padding-bottom: 25px;
+    }
+
+    p {
+      max-width: 100%;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 600px) {
+    section {
+      grid-template-columns: 1fr; /* Skifter til enkelt kolonne */
+      gap: 20px;
+      padding: 20px 15px;
+      margin: 0;
+    }
+
+    .form {
+      padding: 20px 10px;
+      padding-top: 30px;
+      margin-top: 20px;
+    }
+
+    .tekst {
+      margin-top: 20px;
+      order: 1; /* Tekst først på mobil */
+    }
+
+    section img {
+      order: 2; /* Billede efter tekst */
+    }
+
+    /* For anden sektion - billede først */
+    section:nth-child(2) img {
+      order: 1;
+    }
+
+    section:nth-child(2) .form {
+      order: 2;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      padding-bottom: 20px;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Extra small mobile */
+  @media (max-width: 480px) {
+    section {
+      padding: 15px 10px;
+      gap: 15px;
+    }
+
+    .form {
+      padding: 15px 5px;
+      padding-top: 20px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      padding-bottom: 15px;
+    }
+
+    p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
   }
 </style>
