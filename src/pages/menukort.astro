@@ -2,33 +2,16 @@
 import MenukortCard from "../components/MenukortCard.astro";
 import MainLayout from "../layout/MainLayout.astro";
 import "../style/style.css";
-import Button from "../components/Button.astro";
 
-// Menudata
+// Menudata (uden beskrivelse)
 const morgenmad = {
   title: "Morgenmad & Bagværk",
   image: "/imgs/menubreakfast1.svg",
   items: [
-    {
-      ret: "Bolle med ost & valgfri kaffe",
-      beskrivelse: "Friskbagt, økologisk surdejs-bolle med smør og lagret ost & valgfri kaffe.",
-      pris: "45,-",
-    },
-    {
-      ret: "Wienerbrød & valgfri kaffe",
-      beskrivelse: "Sprødt, håndlavet wienerbrød. Inkl. valgfri kaffe.",
-      pris: "48,-",
-    },
-    {
-      ret: "Smurt bolle",
-      beskrivelse: "Vores signatur surdejsbolle med øko-smør.",
-      pris: "48,-",
-    },
-    {
-      ret: "Microbrunch",
-      beskrivelse: "Yoghurt med granola og bær, ost, kogt æg og lun bolle med smør og ost.",
-      pris: "69,-",
-    },
+    { ret: "Bolle med ost & valgfri kaffe", pris: "45,-" },
+    { ret: "Wienerbrød & valgfri kaffe", pris: "48,-" },
+    { ret: "Smurt bolle", pris: "48,-" },
+    { ret: "Microbrunch", pris: "69,-" },
   ],
 };
 
@@ -36,41 +19,13 @@ const frokost = {
   title: "Sandwich & Toast",
   image: "/imgs/menubreakfast2.svg",
   items: [
-    {
-      ret: "Kylling & Karry Salat",
-      beskrivelse: "Økokylling i hjemmelavet karrydressing med salat i surdejsbolle.",
-      pris: "48,-",
-    },
-    {
-      ret: "Laksesalat",
-      beskrivelse: "Koldrøget laks i urtecreme med agurk og purløg i surdejsbolle.",
-      pris: "48,-",
-    },
-    {
-      ret: "Spicy tunsalat",
-      beskrivelse: "Tunsalat med et strejf af chili og citron i surdejsbolle",
-      pris: "48,-",
-    },
-    {
-      ret: "Hjemmelavet humus (vegetarisk)",
-      beskrivelse: "Humus med citron og spidskommen – serveret i vores friskbagte surdejsbolle med sprøde grøntsager.",
-      pris: "48,-",
-    },
-    {
-      ret: "Toast med Skinke & Ost",
-      beskrivelse: "Smeltet økologisk ost og skinke i ristet brød.",
-      pris: "48,-",
-    },
-    {
-      ret: "Toast med Kylling, Ost & Chili",
-      beskrivelse: "Fyldig toast med kylling, ost og et strejf af chili.",
-      pris: "48,-",
-    },
-    {
-      ret: "Toast med Pesto, tomat og mozarella (vegetarisk)",
-      beskrivelse: "Basilikumpesto, tomat og smeltet mozzarella i ristet brød.",
-      pris: "48,-",
-    },
+    { ret: "Kylling & Karry Salat", pris: "48,-" },
+    { ret: "Laksesalat", pris: "48,-" },
+    { ret: "Spicy tunsalat", pris: "48,-" },
+    { ret: "Hjemmelavet humus (vegetarisk)", pris: "48,-" },
+    { ret: "Toast med Skinke & Ost", pris: "48,-" },
+    { ret: "Toast med Kylling, Ost & Chili", pris: "48,-" },
+    { ret: "Toast med Pesto, tomat og mozarella (vegetarisk)", pris: "48,-" },
   ],
 };
 
@@ -96,16 +51,9 @@ const kaffe = {
     <h3 class="h1-tagline">Serveres hele dagen</h3>
   </section>
 
-  <!-- <h1>MENUKORT</h1>
-  <p class="h1-tagline">Serveres hele dagen</p> -->
-
   <MenukortCard {...morgenmad} />
   <MenukortCard {...frokost} reverse={true} />
   <MenukortCard {...kaffe} />
-
-  <!-- <MenukortCard {...morgenmad} />
-<MenukortCard {...frokost} reverse={true} />
-<MenukortCard {...kaffe} /> -->
 </MainLayout>
 
 <style>
@@ -114,10 +62,6 @@ const kaffe = {
     text-align: left;
     padding: 0 1rem;
   }
-  /* .opening-hours {
-    font-size: var(--font-size-h5);
-    margin-bottom: 2rem;
-  } */
 </style>
 
 <script is:inline>
