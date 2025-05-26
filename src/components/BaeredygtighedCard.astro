@@ -1,9 +1,9 @@
 ---
-const { tekst, illustration, offset = false } = Astro.props;
+const { tekst, illustration, alt, offset = false } = Astro.props;
 ---
 
 <article class={`baeredygtighed-card ${offset ? "offset" : ""}`}>
-  <img src={illustration} alt="" />
+  <img src={illustration} alt={alt} />
   <p>{tekst}</p>
 </article>
 <style>
@@ -12,6 +12,8 @@ const { tekst, illustration, offset = false } = Astro.props;
     flex-direction: column;
     gap: 1rem;
     max-width: 300px;
+    min-width: 300px;
+
     margin: auto;
     padding: 2rem;
     margin-bottom: 5rem;
@@ -30,6 +32,27 @@ const { tekst, illustration, offset = false } = Astro.props;
   .baeredygtighed-card p {
     font-size: 1rem;
     line-height: 1.5;
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .timeline {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+
+    .streger {
+      display: none;
+    }
+
+    .venstre {
+      grid-column: 1;
+    }
+
+    .højre {
+      grid-column: 2;
+    }
   }
 
   @media (max-width: 768px) {
