@@ -1,6 +1,7 @@
 ---
 import Singleview from "../../components/Singleview.astro";
 import MainLayout from "../../layout/MainLayout.astro";
+import KontaktForm from "../../components/KontaktForm.astro";
 ---
 
 <MainLayout>
@@ -21,10 +22,40 @@ times="Man-fre 6.00 - 17.30 Lør-søn 6.00 - 17.30"
 image="/imgs/istedgade2.webp"
 />
 
+
+<div class="grid_1-1">
 <Singleview
 reverse={true}
-subtitle="Spørgsmål? Skriv til os"
 image="/imgs/istedgade3.webp"
 />
+<div class="order">
+<h2>Spørgsmål? Skriv  til os</h2>
+<KontaktForm></KontaktForm>
+</div>
+</div>
 
 </MainLayout>
+
+<style>
+
+.grid_1-1 {
+    display: grid;
+}
+
+    .grid_1-1 .order {
+        order: -1;
+    }
+
+    @media (min-width: 800px) {
+    .grid_1-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid_1-1 .order {
+        order: 100;
+        padding: 70px;
+    }
+
+    }
+</style>
