@@ -5,7 +5,7 @@ const {image, alt, title, subtitle, adress, text, times, hours, reverse} = Astro
 <div class={`singleviewcontainer ${reverse ? 'reverse' : ''}`}>
 
 <div class="text-content">
-<h2>{title}</h2>
+<p class="h1-tagline">{title}</p>
 <h3>{subtitle}</h3>
 <p>{text}</p>
 <p>{adress}</p>
@@ -24,7 +24,7 @@ const {image, alt, title, subtitle, adress, text, times, hours, reverse} = Astro
     .singleviewcontainer {
       display: flex;
       gap: 4rem;
-      padding-bottom: 2rem;
+      padding-bottom: 5rem;
       align-items: center;
       justify-content: space-between;
     }

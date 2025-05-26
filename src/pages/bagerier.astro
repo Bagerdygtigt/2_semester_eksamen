@@ -1,16 +1,18 @@
 ---
 import LokationCards from "../components/LokationCards.astro";
 import MainLayout from "../layout/MainLayout.astro";
-
 ---
 
 <MainLayout>
-  <section class="grid_1-1">
+  <section class="flexbox_1">
+    <div>
     <h1>BUTIKKER</h1>
+    <h3>Leder du efter bagværk til firmaet eller private events og catering? <br> Kontakt en af vores butikker her:</h3>
+    </div>
     <img class="stolpicture" src="/imgs/stol.webp" alt="gårdillustration" />
   </section>
 
-   <p>Leder du efter bagværk til firmaet eller private events og catering? <br> Kontakt en af vores butikker her:</p>
+   
 
   <section class="grid_1-1-1">
 
@@ -62,29 +64,32 @@ link="/locations/enghave"
 
 <style>
 
-.grid_1-1{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.flexbox_1 {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding-bottom: 2rem;
+gap: 2rem;
 }
 
 .stolpicture {
-  max-width: 300px;
+  width: 30vw;
+  height: auto;
+  display: block;
+  aspect-ratio: 353 / 224;
+  object-fit: contain;
 }
 
 @media (min-width: 800px) {
 
-.farmpicture {
-  width: 250px;
+.stolpicture {
+  max-width: 300px;
 }
 
 .grid_1-1-1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
-}
-
-a {
-  text-decoration: none;
 }
 
 }
