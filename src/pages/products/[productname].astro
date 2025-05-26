@@ -20,12 +20,12 @@ console.log(myData);
 ---
 
 <MainLayout title={myData.productname}>
-  <section class="grid_1-1">
+  <section class="grid_1-1 grid2_1-1">
     <div>
       <h1>{myData.category}</h1>
     </div>
-    <div>
-      <img src="/imgs/shop.webp" alt="" />
+    <div class="shoppicture">
+      <img src="/imgs/shop.webp" alt="Shop billede" />
     </div>
   </section>
   <section class="grid_1-1">
@@ -36,6 +36,8 @@ console.log(myData);
       <h2>{myData.productname}</h2>
       <h3>Ingredienser:</h3>
       <p class="ingredienser">{myData.ingrediens}</p>
+
+
       <div class="grid_1-1">
         <div>
           <p class="antal">ANTAL:</p>
@@ -43,15 +45,14 @@ console.log(myData);
           <section class="counter-wrapper">
             {
             <button id="minus">-</button>
-              <p id = "counter">0</p> 
+              <button id = "counter">0</button> 
                 <button id="plus">+</button>
             }
           </section>
       
-          <Button variant="primary" size="medium">TILFØJ TIL KURV</Button>
+          <Button variant="primary" size="small">TILFØJ TIL KURV</Button>
         </div>
       </div>
-      
       <img class="singleviewpicture" src="/imgs/singleview.webp" alt="" />
     </div>
   </section>
@@ -76,11 +77,21 @@ console.log(myData);
 </script>
 
   <style>
+
+.grid2_1-1{
+  display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+}
+    .shoppicture{
+      margin-bottom: 2rem;
+    }
 .counter-wrapper {
     display: flex;
     align-items: center;
     gap: 1rem;
-    border: 3px solid var(--color-accent);
+    border: 2px solid var(--color-accent);
+    border-radius: 3px;
     margin-bottom: 1rem;
     width: fit-content;
   } 
@@ -101,7 +112,7 @@ console.log(myData);
   }
 
   .antal{
- margin-top: 2rem;
+ margin-top: 1.5rem;
 }
 .ingredienser{
 padding-right: 9rem;
@@ -123,6 +134,7 @@ margin-top: 2rem;
 
       h2 {
         font-size: 30px;
+        margin-top: 0rem;
       }
       h3 {
         font-size: 25px;
@@ -145,8 +157,11 @@ margin-top: 2rem;
         gap: 10px;
       }
     .singleviewpicture {
-        width: 9%;
-        margin-top: 0.5rem;
+        width: 10%;
+        margin-top: 1rem;
+      }
+      h2{
+        margin-top: 0rem;
       }
 
    }
