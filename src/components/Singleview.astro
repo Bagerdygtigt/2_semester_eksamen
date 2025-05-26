@@ -1,43 +1,91 @@
 ---
-const {image, alt, title, subtitle, adress, text, times, hours, reverse} = Astro.props;
+import KontaktForm from "./KontaktForm.astro";
+
+const {image, imagetwo, imagethree, illustration, alt, title, adress, text, times} = Astro.props;
 ---
 
-<div class={`singleviewcontainer ${reverse ? 'reverse' : ''}`}>
-
-<div class="text-content">
-<p class="h1-tagline">{title}</p>
-<h3>{subtitle}</h3>
-<p>{text}</p>
-<p>{adress}</p>
-<h3>{hours}</h3>
-<p>{times}</p>
+<div class="section_1">
+  <div class="order">
+    <h1>{title}</h1>
+    <h3>Om butikken</h3>
+    <p>{text}</p>
 </div>
-    <div class="image-content">
-<img src={image} alt={alt}/>
+    <div>
+        <img src={image} alt={alt} />
+    </div>
 </div>
 
+<div class="section_2">
+  <div class="section_2-1">
+    <div>
+    <h3>Adresse</h3>
+    <p>{adress}</p>
+    <h3>Åbningstider</h3>
+    <p>{times}</p>
+    </div>
+    <img class="illustration" src={illustration} alt={alt}>
 </div>
+    <div>
+        <img src={imagetwo} alt={alt} />
+    </div>
+</div>
+
+<div class="section_3">
+  <div class="order">
+    <h3>Spørgsmål? Skriv til os</h3>
+    <KontaktForm></KontaktForm>
+    </div>
+    <div>
+        <img src={imagethree} alt={alt} />
+    </div>
+</div>
+
 
 <style>
+  .section_1, 
+  .section_2, 
+  .section_3 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+.section_2-1 {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+padding-bottom: 2rem;
+}
+
+.illustration {
+    height: auto;
+    max-width: 150px;
+  }
+
+   img {
+    height: auto;
+    max-width: 580px;
+    }
 
     @media (min-width: 800px) {
-    .singleviewcontainer {
-      display: flex;
-      gap: 4rem;
-      padding-bottom: 5rem;
-      align-items: center;
-      justify-content: space-between;
-    }
 
-    .singleviewcontainer.reverse {
-      flex-direction: row-reverse;
-    }
+        .section_1, 
+        .section_2, 
+        .section_3 {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 4rem;
+          padding-top: 2rem;
+        }
 
-   
- img {
-    width: 600px;
-    display: block;
-    }
+        .section_1 .order {
+          order: 100;
+        }
+
+        .section_3 .order {
+          order: 100;
+        }
+
     }
 
 </style>

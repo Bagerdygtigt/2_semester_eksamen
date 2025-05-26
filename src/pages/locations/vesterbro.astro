@@ -1,61 +1,17 @@
 ---
 import Singleview from "../../components/Singleview.astro";
 import MainLayout from "../../layout/MainLayout.astro";
-import KontaktForm from "../../components/KontaktForm.astro";
 ---
 
 <MainLayout>
-
-<Singleview
-reverse={true}
-title="Butikken på Vesterbro"
-subtitle="Om butikken"
-text="Vores første butik slog dørene op på Istedgade i 2012. Her midt i hjertet af Vesterbro kan du nyde vores populære microbrunch.  Du kan helt selv sammensætte din egen microbrunch med brød, pålæg, wienerbrød og juice. Alt med omtanke for både smag og bæredygtighed."
-image="/imgs/istedgade1.webp"
-/>
-
-<Singleview
-subtitle="Adresse"
-adress="Istedgade 120, 1650 KBH V"
-hours="Åbningstider"
-times="Man-fre 6.00 - 17.30 Lør-søn 6.00 - 17.30"
-image="/imgs/istedgade2.webp"
-/>
-
-
-<div class="grid_1-1">
-<Singleview
-reverse={true}
-image="/imgs/istedgade3.webp"
-/>
-<div class="order">
-<h2>Spørgsmål? Skriv  til os</h2>
-<KontaktForm></KontaktForm>
-</div>
-</div>
-
+    <Singleview 
+    title="Butikken på Valby"
+    text="Vores første butik slog dørene op på Istedgade i 2012. Her midt i hjertet af Vesterbro kan du nyde vores populære microbrunch. Du kan helt selv sammensætte din egen microbrunch med brød, pålæg, wienerbrød og juice. Alt med omtanke for både smag og bæredygtighed."
+    adress="Istedgade 120, 1650 KBH V"
+    times="Man-fre 6.00 - 17.30 Lør-søn 6.00 - 17.30"
+    image="/imgs/istedgade1.webp"
+    imagetwo="/imgs/istedgade2.webp"
+    imagethree="/imgs/istedgade3.webp"
+    illustration="/imgs/coffeepicture.webp"
+    />
 </MainLayout>
-
-<style>
-
-.grid_1-1 {
-    display: grid;
-}
-
-    .grid_1-1 .order {
-        order: -1;
-    }
-
-    @media (min-width: 800px) {
-    .grid_1-1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .grid_1-1 .order {
-        order: 100;
-        padding: 70px;
-    }
-
-    }
-</style>

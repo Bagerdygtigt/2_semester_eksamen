@@ -1,61 +1,17 @@
 ---
 import Singleview from "../../components/Singleview.astro";
 import MainLayout from "../../layout/MainLayout.astro";
-import KontaktForm from "../../components/KontaktForm.astro";
 ---
 
 <MainLayout>
-
-<Singleview
-reverse={true}
-title="Butikken på Sydhavn"
-subtitle="Om butikken"
-text="Bagerdygtigt Sydhavnen åbnede i 2017 og her har vi selvfølgelig fokus på  økologisk kvalitetsbagværk men vægter også højt vægt på smørrebrød og lidt ekstra hygge i form af øl og aperol spritz for at skabe en hyggelig café stemning. "
-image="/imgs/sydhavn1.webp"
-/>
-
-<Singleview
-subtitle="Adresse"
-adress="Borgbjergsvej 39, 2450 KBH SV"
-hours="Åbningstider"
-times="Man-fre 6.00 - 17.30 Lør-søn 6.00 - 17.30"
-image="/imgs/sydhavn2.webp"
-/>
-
-<div class="grid_1-1">
-<Singleview
-reverse={true}
-image="/imgs/sydhavn3.webp"
-/>
-<div class="order">
-<h2>Spørgsmål? Skriv  til os</h2>
-<KontaktForm></KontaktForm>
-</div>
-</div>
-
+    <Singleview 
+    title="Butikken på Sydhavne"
+    text="Bagerdygtigt Sydhavnen åbnede i 2017 og her har vi selvfølgelig fokus på økologisk kvalitetsbagværk men vægter også højt vægt på smørrebrød og lidt ekstra hygge i form af øl og aperol spritz for at skabe en hyggelig café stemning. "
+    adress="Borgbjergsvej 39, 2450 KBH SV"
+    times="Man-fre 6.00 - 17.30 Lør-søn 6.00 - 17.30"
+    image="/imgs/sydhavn1.webp"
+    imagetwo="/imgs/sydhavn2.webp"
+    imagethree="/imgs/sydhavn3.webp"
+    illustration="/imgs/kager.webp"
+    />
 </MainLayout>
-
-
-<style>
-
-.grid_1-1 {
-    display: grid;
-}
-
-    .grid_1-1 .order {
-        order: -1;
-    }
-
-    @media (min-width: 800px) {
-    .grid_1-1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .grid_1-1 .order {
-        order: 100;
-        padding: 70px;
-    }
-
-    }
-</style>

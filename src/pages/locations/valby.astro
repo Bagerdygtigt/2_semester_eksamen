@@ -1,60 +1,17 @@
 ---
 import Singleview from "../../components/Singleview.astro";
 import MainLayout from "../../layout/MainLayout.astro";
-import KontaktForm from "../../components/KontaktForm.astro";
 ---
 
 <MainLayout>
-
-<Singleview
-reverse={true}
-title="Butikken på Sydhavn"
-subtitle="Om butikken"
-text="Vores anden bagerbutik åbnede i 2016 i Valby. Her kan man både nyde lækre varianter af is, kombucha (vælg mellem havtorn, hyben, lindeblomst og surkirsebær) og selvfølgelig vores økologiske bagværk. "
-image="/imgs/valby1.webp"
-/>
-
-<Singleview
-subtitle="Adresse"
-adress="Valby langgade 185, 2500 Valby"
-hours="Åbningstider"
-times="Man-fre 6.00 - 17.30 Lør-søn 6.00 - 16.30"
-image="/imgs/valby2.webp"
-/>
-
-<div class="grid_1-1">
-<Singleview
-reverse={true}
-image="/imgs/valby3.webp"
-/>
-<div class="order">
-<h2>Spørgsmål? Skriv  til os</h2>
-<KontaktForm></KontaktForm>
-</div>
-</div>
-
+     <Singleview 
+    title="Butikken på Valby"
+    text="Vores anden bagerbutik åbnede i 2016 i Valby. Her kan man både nyde lækre varianter af is, kombucha (vælg mellem havtorn, hyben, lindeblomst og surkirsebær) og selvfølgelig vores økologiske bagværk."
+    adress="Valby langgade 185, 2500 Valby"
+    times="Man-fre 6.00 - 17.30 Lør-søn 6.00 - 16.30"
+    image="/imgs/valby1.webp"
+    imagetwo="/imgs/valby2.webp"
+    imagethree="/imgs/valby3.webp"
+    illustration="/imgs/blomst.webp"
+    />
 </MainLayout>
-
-<style>
-
-.grid_1-1 {
-    display: grid;
-}
-
-    .grid_1-1 .order {
-        order: -1;
-    }
-
-    @media (min-width: 800px) {
-    .grid_1-1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .grid_1-1 .order {
-        order: 100;
-        padding: 70px;
-    }
-
-    }
-</style>
