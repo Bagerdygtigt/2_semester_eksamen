@@ -1,13 +1,17 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
 <nav class="site-header">
   <div class="logo">
     <a href="/" class="logo"><img src="../public/imgs/logo2.svg" alt="" /></a>
   </div>
 
   <ul class="menu">
-    <li><a href="/products">SHOP BAGVÆRK</a></li>
-    <li><a href="/menukort">MENUKORT</a></li>
-    <li><a href="/bagerier">BAGERIER</a></li>
-    <li><a href="/baeredygtighed">BÆREDYGTIGHED</a></li>
+    <li><a href="/products" class={currentPath === "/products" ? "active" : ""}>SHOP BAGVÆRK</a></li>
+    <li><a href="/menukort" class={currentPath === "/menukort" ? "active" : ""}>MENUKORT</a></li>
+    <li><a href="/bagerier" class={currentPath === "/bagerier" ? "active" : ""}>BAGERIER</a></li>
+    <li><a href="/baeredygtighed" class={currentPath === "/baeredygtighed" ? "active" : ""}>BÆREDYGTIGHED</a></li>
   </ul>
   <div>
     <div class="burger">
@@ -20,6 +24,10 @@
 
 <style>
   /************ Menu ***********/
+  .menu a.active {
+    border-bottom: 2px solid var(--color-accent);
+    text-decoration: none;
+  }
 
   nav {
     height: 70px;
@@ -46,7 +54,6 @@
 
   .menu li {
     border-width: 5cm;
-    /* float: left; */
   }
 
   .menu li:hover {
