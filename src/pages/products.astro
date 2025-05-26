@@ -16,7 +16,7 @@ const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bager
   <TopGrid />
 
   <div class="grid_1-1-1-1-1">
-    <a class="category activ" href="/products">Alt bagværk</a>
+    <a class="category activ alt" href="/products">Alt bagværk</a>
     <a class="category" href="/broed">Brød</a>
     <a class="category" href="/boller">Boller</a>
     <a class="category" href="/kage">Kage</a>
@@ -42,9 +42,12 @@ const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bager
     font-size: 16px;
     font-family: var(--font-tagline);
     cursor: pointer;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-weight: 400;
+  }
+  .alt {
+    margin-top: 2rem;
   }
 
   .category:hover {
@@ -60,7 +63,7 @@ const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bager
     text-decoration: underline;
     text-decoration-color: var(--color-accent);
     text-decoration-thickness: 2.5px;
-    text-underline-offset: 4px;
+    text-underline-offset: 6px;
   }
 
   /*************** Kategorierne Resposivt ***************/
@@ -68,11 +71,6 @@ const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bager
     .grid_1-1-1-1-1 {
       display: grid;
       grid-template-columns: 1fr;
-    }
-
-    .category {
-      margin-top: 0.1rem;
-      margin-bottom: 0.1rem;
     }
   }
 
