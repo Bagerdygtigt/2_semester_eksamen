@@ -1,60 +1,17 @@
 ---
 import Singleview from "../../components/Singleview.astro";
 import MainLayout from "../../layout/MainLayout.astro";
-import KontaktForm from "../../components/KontaktForm.astro";
 ---
 
 <MainLayout>
-
-<Singleview
-reverse={true}
-title="Butikken på Enghave"
-subtitle="Om butikken"
-text="Vores femte butik slog dørene op på Enghavevej i 2020. Her kan du nyde vores populære microbrunch.  Du kan helt selv sammensætte din egen microbrunch med brød, pålæg, wienerbrød og juice. Alt med omtanke for både smag og bæredygtighed."
-image="/imgs/enghave1.webp"
-/>
-
-<Singleview
-subtitle="Adresse"
-adress="Enghavevej 71, 1674 KBH V"
-hours="Åbningstider"
-times="Man-fre 6.00 - 17.30 Lør-søn 6.00 - 16.30"
-image="/imgs/enghave2.webp"
-/>
-
-<div class="grid_1-1">
-<Singleview
-reverse={true}
-image="/imgs/enghave3.webp"
-/>
-<div class="order">
-<h2>Spørgsmål? Skriv  til os</h2>
-<KontaktForm></KontaktForm>
-</div>
-</div>
-
+    <Singleview 
+    title="Butikken på Enghave"
+    text="Vores femte butik slog dørene op på Enghavevej i 2020. Her kan du nyde vores populære microbrunch.  Du kan helt selv sammensætte din egen microbrunch med brød, pålæg, wienerbrød og juice. Alt med omtanke for både smag og bæredygtighed."
+    adress="Enghavevej 71, 1674 KBH V"
+    times="Man-fre 6.00 - 17.30 Lør-søn 6.00 - 16.30"
+    image="/imgs/enghave1.webp"
+    imagetwo="/imgs/enghave2.webp"
+    imagethree="/imgs/enghave3.webp"
+    illustration="/imgs/blomst.webp"
+    />
 </MainLayout>
-
-<style>
-
-.grid_1-1 {
-    display: grid;
-}
-
-    .grid_1-1 .order {
-        order: -1;
-    }
-
-    @media (min-width: 800px) {
-    .grid_1-1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .grid_1-1 .order {
-        order: 100;
-        padding: 70px;
-    }
-
-    }
-</style>
