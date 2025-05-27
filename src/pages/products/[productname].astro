@@ -30,7 +30,7 @@ console.log(myData);
   </section>
   <section class="grid_1-1">
     <div>
-      <img src={myData.imgs} alt={myData.productname} />
+      <img class="productpic" src={myData.imgs} alt={myData.productname} />
     </div>
     <div>
       <h2>{myData.productname}</h2>
@@ -55,8 +55,9 @@ console.log(myData);
                 <button id="plus">+</button>
             }
           </section>
-      
+      <div class="kurv">
           <Button variant="primary" size="small">TILFØJ TIL KURV</Button>
+        </div>
         </div>
       </div>
     </div>
@@ -84,6 +85,12 @@ console.log(myData);
 
   <style>
 
+.kurv {
+  margin-bottom: 3rem;
+}
+.productpic{
+  margin-bottom: 3rem;
+}
 .grid2_1-1{
   display: grid;
         grid-template-columns: 1fr 1fr;
@@ -136,6 +143,14 @@ console.log(myData);
 width: 5%;
 margin-top: 1rem;
 }
+
+h2 { margin-top: 0.1rem;
+}
+
+h1 {
+        margin-top: 3rem;
+      }
+
     @media (min-width: 1250px) {
       .grid_1-1 {
         display: grid;
@@ -148,16 +163,12 @@ margin-top: 1rem;
         margin-top: 0rem;
       }
       h3 {
-        font-size: 25px;
-      }
-
-      h1 {
-        margin-top: 3rem;
+        font-size: 22px;
       }
 
     }
 
-    @media (min-width: 1050px) and (max-width: 1250px){
+    @media (min-width: 850px) and (max-width: 1250px){
       .grid_1-1 {
         display: grid;
         grid-template-columns: 1fr 1fr;
