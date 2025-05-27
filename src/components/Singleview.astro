@@ -19,9 +19,9 @@ const {image, imagetwo, imagethree, illustration, alt, title, adress, text, time
   <div class="section_2-1">
     <div>
     <h3>Adresse</h3>
-    <p>{adress}</p>
+    <p set:html={adress}></p>
     <h3>Åbningstider</h3>
-    <p>{times}</p>
+    <p set:html={times}></p>
     </div>
     <img class="illustration" src={illustration} alt={alt}>
 </div>
@@ -47,6 +47,7 @@ const {image, imagetwo, imagethree, illustration, alt, title, adress, text, time
   .section_3 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+
   }
 
 .section_2-1 {
@@ -75,17 +76,21 @@ padding-bottom: 2rem;
           align-items: center;
           justify-content: space-between;
           gap: 4rem;
-          padding-top: 2rem;
+          padding-top: 4rem;
+          h1{
+            font-size: 2.7rem;
+          }
         }
 
         .section_1 .order {
           order: 100;
+          padding-right: 2rem;
         }
 
         .section_3 .order {
           order: 100;
+          padding-right: 3rem;
         }
-
     }
 
 </style>
