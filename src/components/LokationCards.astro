@@ -3,7 +3,7 @@ const {image, alt, title, adress, times, link, illustration} = Astro.props;
 import Button from "../components/Button.astro";
 ---
 
-<div class="locationcard">
+<div class="locationcard fade-in">
     <img class="frontpic" src={image} alt={alt}>
     <div class="grid_1-1">
       <div>
@@ -51,8 +51,5 @@ a {
 .cardillustration {
   display: none;
 }
-
-
 }
-
 </style>

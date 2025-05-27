@@ -18,3 +18,21 @@ import MainLayout from "../../layout/MainLayout.astro";
     />
 
 </MainLayout>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll(".fade-in").forEach((card) => {
+    // card.classList.add("fade-in");
+    observer.observe(card);
+  });
+</script>

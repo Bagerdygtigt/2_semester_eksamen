@@ -4,6 +4,7 @@ import KontaktForm from "./KontaktForm.astro";
 const {image, imagetwo, imagethree, illustration, alt, title, adress, text, times} = Astro.props;
 ---
 
+<div class="fade-in">
 <div class="section_1">
   <div class="order">
     <h1>{title}</h1>
@@ -39,7 +40,7 @@ const {image, imagetwo, imagethree, illustration, alt, title, adress, text, time
         <img src={imagethree} alt={alt} />
     </div>
 </div>
-
+</div>
 
 <style>
   .section_1, 
@@ -47,7 +48,7 @@ const {image, imagetwo, imagethree, illustration, alt, title, adress, text, time
   .section_3 {
     padding-top: 2rem;
     padding-bottom: 2rem;
-
+    padding-inline: ;
   }
 
 .section_2-1 {
@@ -84,7 +85,6 @@ padding-bottom: 2rem;
 
         .section_1 .order {
           order: 100;
-          padding-right: 2rem;
         }
 
         .section_3 .order {
@@ -92,5 +92,5 @@ padding-bottom: 2rem;
           padding-right: 3rem;
         }
     }
-
 </style>
+

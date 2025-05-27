@@ -10,12 +10,9 @@ import MainLayout from "../layout/MainLayout.astro";
     <h3>Leder du efter bagværk til firmaet eller private events og catering? <br> Kontakt en af vores butikker her:</h3>
     </div>
     <img class="stolpicture" src="/imgs/stol.webp" alt="blomstillustration" />
-  </section>
+  </section>   
 
-   
-
-  <section class="grid_1-1-1">
-
+<section class="grid_1-1-1">
 <LokationCards 
 image="/imgs/valby1.webp"
 title="Valby"
@@ -55,15 +52,12 @@ adress="Enghavevej 71, <br> 1674 KBH V"
 times="Man-fre 6.00 - 17.30 <br> Lør-søn 6.00 - 17.30"
 illustration="/imgs/blomst.webp"
 link="/locations/enghave"
-/>
-  
-  </section>
+/>  
+</section>
 
 </MainLayout>
 
-
 <style>
-
 .flexbox_1 {
 display: flex;
 flex-direction: row;
@@ -85,6 +79,7 @@ h3 { font-size: 0.8rem;}
 @media (min-width: 800px) {
 
 .flexbox_1 {
+  padding-top: 2rem;
   h3 {
     font-size: var(--font-size-h3);
   }
@@ -99,7 +94,23 @@ h3 { font-size: 0.8rem;}
 .stolpicture {
   max-width: 300px;
 }
-
 }
-
 </style>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll(".fade-in").forEach((card) => {
+    // card.classList.add("fade-in");
+    observer.observe(card);
+  });
+</script>
