@@ -4,8 +4,8 @@ import KontaktForm from "./KontaktForm.astro";
 const {image, imagetwo, imagethree, illustration, alt, title, adress, text, times} = Astro.props;
 ---
 
-<div class="fade-in">
-<div class="section_1">
+
+<div class="section_1 fade-in">
   <div class="order">
     <h1>{title}</h1>
     <h3>Om butikken</h3>
@@ -16,8 +16,9 @@ const {image, imagetwo, imagethree, illustration, alt, title, adress, text, time
     </div>
 </div>
 
-<div class="section_2">
-  <div class="section_2-1">
+<div class="section_2 fade-in">
+  <div class="order">
+    <div class="grid_2">
     <div>
     <h3>Adresse</h3>
     <p set:html={adress}></p>
@@ -25,13 +26,14 @@ const {image, imagetwo, imagethree, illustration, alt, title, adress, text, time
     <p set:html={times}></p>
     </div>
     <img class="illustration" src={illustration} alt={alt}>
-</div>
+</div></div>
     <div>
         <img src={imagetwo} alt={alt} />
     </div>
 </div>
 
-<div class="section_3">
+
+<div class="section_3 fade-in">
   <div class="order">
     <h3>Spørgsmål? Skriv til os</h3>
     <KontaktForm></KontaktForm>
@@ -40,7 +42,7 @@ const {image, imagetwo, imagethree, illustration, alt, title, adress, text, time
         <img src={imagethree} alt={alt} />
     </div>
 </div>
-</div>
+
 
 <style>
   .section_1, 
@@ -48,15 +50,15 @@ const {image, imagetwo, imagethree, illustration, alt, title, adress, text, time
   .section_3 {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    padding-inline: ;
   }
 
-.section_2-1 {
+.grid_2 {
 display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 30px;
 padding-bottom: 2rem;
 }
+
 
 .illustration {
     height: auto;
@@ -64,8 +66,9 @@ padding-bottom: 2rem;
   }
 
    img {
-    height: auto;
     max-width: 580px;
+    height: auto;
+    width: 100%;
     }
 
     @media (min-width: 800px) {
@@ -86,7 +89,7 @@ padding-bottom: 2rem;
         .section_1 .order {
           order: 100;
         }
-
+        
         .section_3 .order {
           order: 100;
           padding-right: 3rem;
