@@ -129,7 +129,7 @@ p {
   line-height: var(--line-height-m);
   color: var(--color-text);
   margin-bottom: var(--spacing-2);
-  max-width: 70ch;
+  max-width: 65ch;
 }
 
 /* --------- Links -------- */
