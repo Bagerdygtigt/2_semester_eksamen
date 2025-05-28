@@ -29,21 +29,19 @@ const { title, time, image, items, reverse = false } = Astro.props;
 <style>
   .divider {
     border: none;
-    border-top: 1px solid #fddb74;
-    margin: 0.2rem 0;
+    /* margin: 0.2rem 0; */
     width: 100%;
   }
 
   .card {
     display: grid;
     gap: 1rem;
-    padding-block: 3rem; /* mere luft top/bund */
-    /* border-top: 1px solid #d69e23; */
+    padding-block: 4rem;
   }
 
-  .card:first-of-type {
-    border-top: none; /* fjern streg før første sektion */
-  }
+  /* .card:first-of-type {
+    border-top: none;
+  } */
 
   .menu-text {
     display: flex;
@@ -73,7 +71,6 @@ const { title, time, image, items, reverse = false } = Astro.props;
     /* font-weight: bold; */
   }
 
-  /* Illustration placeres under indholdet på mobil */
   .illustration {
     width: 100%;
     max-width: 200px;
@@ -84,10 +81,6 @@ const { title, time, image, items, reverse = false } = Astro.props;
   /* Desktop layout */
   @media (min-width: 768px) {
     .card {
-      padding-left: 3rem;
-      padding-right: 3rem;
-      margin-left: 4rem;
-      margin-right: 4rem;
       grid-template-columns: 2fr 1fr;
       align-items: start;
     }
