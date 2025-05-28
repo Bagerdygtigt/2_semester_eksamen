@@ -43,7 +43,7 @@
   --font-size-h2: clamp(0.9rem, 4vw, 1.3rem);
   --font-size-h3: clamp(0.75rem, 4vw, 1rem);
   /* --font-size-p-small: clamp(0.6rem, 1.2vw, 0.875rem); */
-  --font-size-footerheader: clamp(0.6rem, 4vw, 0.8rem);
+  --font-size-p-xs: clamp(0.5rem, 4vw, 0.7rem);
   --font-size-p-small: clamp(1rem, 1.2vw, 0.7rem);
 
   /* Vægte */
@@ -129,7 +129,7 @@ p {
   line-height: var(--line-height-m);
   color: var(--color-text);
   margin-bottom: var(--spacing-2);
-  max-width: 70ch;
+  max-width: 65ch;
 }
 
 /* --------- Links -------- */
@@ -172,18 +172,11 @@ nav.active .menu {
 
 .site-footer {
   font-family: var(--font-tagline);
-  font-size: var(--font-size-footerheader);
+  font-size: var(--font-size-p-xs);
   font-weight: var(--font-weight-semibold);
-  background-color: var(--color-secondary-2);
+  /* background-color: var(--color-secondary-2); */
   backdrop-filter: blur(10px);
-  /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
-}
-
-.footer-column.left,
-.footer-column.right,
-.footer-column.center,
-.left-content {
-  background-color: var(--color-secondary-2);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-column a {
@@ -193,11 +186,12 @@ nav.active .menu {
 
 .footer-titel {
   font-family: var(--font-tagline);
-  font-size: var(--font-size-footerheader);
+  font-size: var(--font-size-p-xs);
   font-weight: var(--font-weight-semibold);
 }
 
 .footer-titel-2 {
+  font-size: var(--font-size-p-xs);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
