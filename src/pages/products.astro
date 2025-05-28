@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout.astro";
 import ProductGrid from "../components/ProductGrid.astro";
 import TopGrid from "../components/TopGrid.astro";
 import BottomGrid from "../components/BottomGrid.astro";
+import "../style/style.css";
 
 const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bagerdygtigsprodukter", {
   method: "GET",
