@@ -1,6 +1,8 @@
 ---
 import BaeredygtighedCard from "../components/BaeredygtighedCard.astro";
 import MainLayout from "../layout/MainLayout.astro";
+
+const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <MainLayout>
