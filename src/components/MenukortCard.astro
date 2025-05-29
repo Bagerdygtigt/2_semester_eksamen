@@ -13,7 +13,7 @@ const { title, time, image, items, reverse = false } = Astro.props;
         items.map((item) => (
           <div class="item">
             <div class="item-text">
-              <h3>{item.ret}</h3>
+              <h2>{item.ret}</h2>
               {item.beskrivelse && <p>{item.beskrivelse}</p>}
             </div>
             <h3 class="item-price">{item.pris}</h3>
@@ -32,7 +32,9 @@ const { title, time, image, items, reverse = false } = Astro.props;
     /* margin: 0.2rem 0; */
     width: 100%;
   }
-
+  h2 {
+    text-transform: none;
+  }
   .card {
     display: grid;
     gap: 1rem;
@@ -116,6 +118,4 @@ const { title, time, image, items, reverse = false } = Astro.props;
 
   .fade-in.visible {
     opacity: 1;
-    transform: translateY(0);
-  }
-</style>
+    tra
