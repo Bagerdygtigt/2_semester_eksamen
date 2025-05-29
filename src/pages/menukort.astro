@@ -3,6 +3,8 @@ import MenukortCard from "../components/MenukortCard.astro";
 import MainLayout from "../layout/MainLayout.astro";
 import "../style/style.css";
 
+const currentPath = new URL(Astro.request.url).pathname;
+
 // Menudata (uden beskrivelse)
 const morgenmad = {
   title: "Morgenmad & Bagværk",
@@ -63,7 +65,6 @@ const kaffe = {
     padding-top: 2rem;
 
     /* padding: 0 1rem; */
-
   }
 </style>
 
