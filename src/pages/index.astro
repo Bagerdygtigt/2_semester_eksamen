@@ -3,9 +3,10 @@ import MainLayout from "../layout/MainLayout.astro";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 import "../style/style.css";
+const currentPath = new URL(Astro.request.url).pathname;
 ---
 
-<MainLayout>
+<MainLayout currentPath={currentPath}>
   <Hero />
   <Section />
 </MainLayout>
