@@ -1,5 +1,5 @@
 ---
-const currentPath = Astro.url.pathname;
+const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <nav class="site-header">
@@ -10,7 +10,7 @@ const currentPath = Astro.url.pathname;
   <ul class="menu">
     <li><a href="/products" class={currentPath === "/products" ? "active" : ""}>SHOP BAGVÆRK</a></li>
     <li><a href="/menukort" class={currentPath === "/menukort" ? "active" : ""}>MENUKORT</a></li>
-    <li><a href="/bagerier" class={currentPath === "/bagerier" ? "active" : ""}>BAGERIER</a></li>
+    <li><a href="/bagerier" class={currentPath === "/bagerier" ? "active" : ""}>LOKATIONER</a></li>
     <li><a href="/baeredygtighed" class={currentPath === "/baeredygtighed" ? "active" : ""}>BÆREDYGTIGHED</a></li>
     <li class="kurv">
       <svg class="kurv-ikon" width="533" height="528" viewBox="0 0 533 528" fill="none" xmlns="http://www.w3.org/2000/svg">
