@@ -5,7 +5,7 @@ const { title, time, image, items, reverse = false } = Astro.props;
 
 <section class={`card ${reverse ? "reverse" : ""}`}>
   <div class="menu-text">
-    <h2>{title}</h2>
+    <h3>{title}</h3>
     {time && <p class="time">{time}</p>}
     <hr class="divider" />
     <div class="items">
@@ -13,10 +13,10 @@ const { title, time, image, items, reverse = false } = Astro.props;
         items.map((item) => (
           <div class="item">
             <div class="item-text">
-              <h2>{item.ret}</h2>
-              {item.beskrivelse && <p>{item.beskrivelse}</p>}
+              <p class="item-title">{item.ret}</p>
+              {item.beskrivelse && <p class="item-desc">{item.beskrivelse}</p>}
             </div>
-            <h3 class="item-price">{item.pris}</h3>
+            <p class="item-price">{item.pris}</p>
           </div>
         ))
       }
@@ -27,28 +27,38 @@ const { title, time, image, items, reverse = false } = Astro.props;
 </section>
 
 <style>
-  .divider {
-    border: none;
-    /* margin: 0.2rem 0; */
-    width: 100%;
-  }
-  h2 {
-    text-transform: none;
-  }
   .card {
     display: grid;
     gap: 1rem;
     padding-block: 4rem;
   }
 
-  /* .card:first-of-type {
-    border-top: none;
-  } */
-
   .menu-text {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  .menu-text > h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .time {
+    font-style: italic;
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin: 0;
+  }
+
+  .divider {
+    border: none;
+    height: 1px;
+    background-color: var(--color-accent-5);
+    width: 100%;
   }
 
   .items {
@@ -57,20 +67,27 @@ const { title, time, image, items, reverse = false } = Astro.props;
     gap: 1rem;
   }
 
-  /* 2-1 grid for hver ret */
   .item {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    align-items: start;
+    align-items: center;
   }
 
-  .item-text p {
-    font-weight: 300;
+  .item-title,
+  .item-price {
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin: 0;
   }
 
   .item-price {
     text-align: right;
-    /* font-weight: bold; */
+  }
+
+  .item-desc {
+    font-weight: 300;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
   }
 
   .illustration {
@@ -107,7 +124,6 @@ const { title, time, image, items, reverse = false } = Astro.props;
   }
 
   /* Animation */
-
   .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -118,4 +134,6 @@ const { title, time, image, items, reverse = false } = Astro.props;
 
   .fade-in.visible {
     opacity: 1;
-    tra
+    transform: translateY(0);
+  }
+</style>
