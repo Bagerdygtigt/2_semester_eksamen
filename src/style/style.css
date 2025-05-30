@@ -2,7 +2,6 @@
 @import "layout.css";
 
 /****** Fonts ******/
-/* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100..900&family=Raleway:wght@100..900&display=swap"); */
 @import url("https://use.typekit.net/tcb1jhn.css?display=swap");
 
 @font-face {
@@ -153,9 +152,7 @@ nav {
   top: 0;
   z-index: 999;
   border-bottom: 1px solid var(--color-accent-3);
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
   background-color: rgba(255, 253, 245, 1);
-  /* backdrop-filter: blur(6px); */
   padding: 2rem 1.5rem;
   font-family: var(--font-tagline);
   font-size: var(--font-size-footerheader);
@@ -178,7 +175,6 @@ nav.active .menu {
   font-family: var(--font-tagline);
   font-size: var(--font-size-p-xs);
   font-weight: var(--font-weight-semibold);
-  /* background-color: var(--color-secondary-2); */
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }

@@ -24,7 +24,7 @@ const currentPath = new URL(Astro.request.url).pathname;
   );
 
   document.querySelectorAll(".fade-in").forEach((card) => {
-    // card.classList.add("fade-in");
+
     observer.observe(card);
   });
 </script>
