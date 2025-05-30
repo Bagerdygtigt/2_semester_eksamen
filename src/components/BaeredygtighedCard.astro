@@ -2,8 +2,8 @@
 const { tekst, illustration, alt, offset = false } = Astro.props;
 ---
 
-<article class={`baeredygtighed-card ${offset ? "offset" : ""}`}>
-  <img src={illustration} alt={alt} />
+<article class={`baeredygtighed-card ${offset ? "offset" : ""} fade-in`}>
+  <img class="streger" src={illustration} alt={alt} />
   <p>{tekst}</p>
 </article>
 <style>
@@ -35,14 +35,14 @@ const { tekst, illustration, alt, offset = false } = Astro.props;
   }
 
   /* Tablet */
-  @media (max-width: 1024px) and (min-width: 769px) {
+  @media (max-width: 1200px) and (min-width: 769px) {
     .timeline {
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
       padding: 2rem 1rem;
     }
 
-    .streger {
+    .streger .timeline {
       display: none;
     }
 

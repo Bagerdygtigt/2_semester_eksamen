@@ -1,5 +1,5 @@
 ---
-const currentPath = Astro.url.pathname;
+const { currentPath } = Astro.props;
 ---
 
 <nav class="site-header">
@@ -10,9 +10,18 @@ const currentPath = Astro.url.pathname;
   <ul class="menu">
     <li><a href="/products" class={currentPath === "/products" ? "active" : ""}>SHOP BAGVÆRK</a></li>
     <li><a href="/menukort" class={currentPath === "/menukort" ? "active" : ""}>MENUKORT</a></li>
-    <li><a href="/bagerier" class={currentPath === "/bagerier" ? "active" : ""}>BAGERIER</a></li>
+    <li><a href="/bagerier" class={currentPath === "/bagerier" ? "active" : ""}>LOKATIONER</a></li>
     <li><a href="/baeredygtighed" class={currentPath === "/baeredygtighed" ? "active" : ""}>BÆREDYGTIGHED</a></li>
-    <li class="kurv"><img src="/imgs/kurv_ikon.svg" alt="en kurv" /></li>
+    <li class="kurv">
+      <svg class="kurv-ikon" width="533" height="528" viewBox="0 0 533 528" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M508.019 356.567H240.019C216.52 356.567 220.52 313.567 240.019 313.567H516.519C538.019 313.567 535.019 266.567 516.519 266.567H17.5191C-5.98047 266.567 -2.98099 313.567 17.5191 313.567H78.0191C100.02 313.567 99.0195 356.567 78.0191 356.567H28.5192C30.9192 444.967 108.352 506.734 146.019 526.567H398.519C477.319 471.367 502.686 390.234 508.019 356.567Z"
+          fill="currentColor" stroke="currentColor"/>
+        <path d="M47.5205 222.069H94.5205C94.5205 -7.43263 440.021 -23.4326 440.021 222.069H489.521C489.521 -75.4333 47.5205 -69.9331 47.5205 222.069Z"
+          fill="currentColor" stroke="currentColor"/>
+      </svg>
+    </li>
+    
+    
   </ul>
   <div>
     <div class="burger">
@@ -97,6 +106,19 @@ const currentPath = Astro.url.pathname;
       width: auto;
       vertical-align: middle;
     }
+
+    .kurv-ikon {
+  width: 1.1em;
+  height: auto;
+  color: black;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.kurv:hover .kurv-ikon {
+  color: var(--color-secondary);
+}
+
 
     /*********************************** a tags generelt ******************************/
 

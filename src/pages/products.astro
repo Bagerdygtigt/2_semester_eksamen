@@ -5,6 +5,8 @@ import TopGrid from "../components/TopGrid.astro";
 import BottomGrid from "../components/BottomGrid.astro";
 import "../style/style.css";
 
+const currentPath = new URL(Astro.request.url).pathname;
+
 const data = await fetch("https://zbrjayekwqwkywlpbbas.supabase.co/rest/v1/bagerdygtigsprodukter", {
   method: "GET",
   headers: {

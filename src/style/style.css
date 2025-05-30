@@ -2,8 +2,20 @@
 @import "layout.css";
 
 /****** Fonts ******/
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100..900&family=Raleway:wght@100..900&display=swap");
-@import url("https://use.typekit.net/tcb1jhn.css");
+/* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100..900&family=Raleway:wght@100..900&display=swap"); */
+@import url("https://use.typekit.net/tcb1jhn.css?display=swap");
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
 
 /****** Global Styling ******/
 :root {
@@ -42,7 +54,6 @@
   --font-size-h1: clamp(2.8rem, 7vw, 4.5rem);
   --font-size-h2: clamp(0.9rem, 4vw, 1.3rem);
   --font-size-h3: clamp(0.75rem, 4vw, 1rem);
-  /* --font-size-p-small: clamp(0.6rem, 1.2vw, 0.875rem); */
   --font-size-p-xs: clamp(0.5rem, 4vw, 0.7rem);
   --font-size-p-small: clamp(1rem, 1.2vw, 0.7rem);
 
@@ -66,13 +77,6 @@
   --spacing-6: 6rem;
   --spacing-section: 8rem;
 }
-
-/* main {
-  margin-bottom: 5rem;
-  margin-top: 4rem;
-  text-align: left;
-  padding: 0 1rem;
-} */
 
 /* --------- Typografi --------  */
 
