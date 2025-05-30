@@ -18,13 +18,13 @@ main {
   padding-inline: 2rem;
 }
 
-/* Undtag hero fra main's begrænsninger */
+
 main:has(.hero) {
   padding-inline: 0;
   max-width: none;
 }
 
-/* Gendan padding for alt andet indhold efter hero */
+
 main > *:not(.hero) {
   max-width: 1400px;
   margin-inline: auto;
